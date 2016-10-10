@@ -8,5 +8,5 @@ index 61eabe5..423ffc6 100644
 -Which door will you go through?
 \ No newline at end of file
 +Which door will you go through?
-+The left, center, or right?
++The left door?
 \ No newline at end of file
