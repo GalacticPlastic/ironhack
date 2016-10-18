@@ -1,0 +1,101 @@
+/*-- Globals --*/
+* { margin: 0; padding: 0; }
+body {
+	background: #fff;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	height: 100%;
+	line-height: 1.7em;
+}
+header, footer {
+	color: #ddd;
+	margin: 0 auto;
+	width: 100%;
+}
+header {
+	padding: 20px 0 0;
+	text-align: right;
+}
+header ul { padding-right: 30px; }
+header a {
+	color: #333;
+	text-decoration: none;
+}
+header a#signin {
+	background: #4285f4;
+	border: 1px solid #4285f4;
+	border-radius: 3px;
+	color: #fff;
+	font-weight: bold;
+	padding: 6px 12px 7px;
+}
+article {
+	height: 100%;
+}
+article img#logo { 
+	display: block;
+	height: 92px;
+	margin: 155px auto 30px;
+    width: 272px;
+}
+#search {
+	border: 1px solid #d9d9d9;
+	height: 36px;
+	margin: 0 auto;
+	width: 485px;
+}
+#search:hover { border: 1px solid #4d90fe; }
+#search input[type="text"] {
+	background: url(images/google-mic2.png) center right no-repeat;
+	border: none;
+	font-size: 14px;
+	height: 34px;
+	padding: 3px 0 0 10px;
+	width: 465px;
+}
+#buttons {
+	margin: 0 auto;
+	width: 295px;
+}
+#buttons input[type="submit"] {
+	background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    color: #757575;
+    font-size: 13px;
+    font-weight: bold;
+    height: 36px;
+    line-height: 27px;
+    margin: 35px 0 0;
+    padding: 0 20px;
+}
+footer {
+	background: #f2f2f2;
+    border-top: 1px solid #e4e4e4;
+    height: 20px;
+    margin-top: 255px;
+    padding: 10px 0;
+}
+ul#footer-left, ul#footer-right { display: inline-block; }
+ul#footer-left {
+	float: left;
+	padding-left: 30px;
+	width: 40%;
+}
+ul#footer-right {
+	float: right;
+	padding-right: 30px;
+	text-align: right;
+	width: 40%;
+}
+header li, footer li {
+	display: inline;
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+footer a {
+	color: #666;
+	text-decoration: none;
+}
+
+#666

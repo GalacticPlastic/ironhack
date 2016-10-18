@@ -1,0 +1,71 @@
+/*-- Globals --*/
+body {
+	background: url(images/seigaiha.png) top left repeat;
+	font-family: Century Gothic, sans-serif;
+	font-size: 13px;
+	line-height: 1.7em;
+	margin: 0;
+	padding: 0;
+}
+header, footer {
+	background-color: #333;
+	color: #ddd;
+	margin: 0 auto;
+	padding: 10px 20px;
+	width: 100%;
+}
+article {
+	height: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+	width: 1000px;
+}
+.clear { clear: both; }
+/*-- Content --*/
+section {
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+	width: 730px;
+}
+aside {
+	display: inline-block;
+	float: right;
+	width: 230px;
+}
+section img {
+	display: inline-block;
+	float: right;
+	max-width: 450px;
+	margin: 0 0 10px 30px;
+}
+h1 {
+	font-size: 2.8em;
+	font-weight: normal;
+	text-align: center;
+}
+p { text-align: justify; }
+/*-- Footer --*/
+footer p, footer ul {
+	display: inline-block;
+	margin: 0;
+	padding: 10px 5px;
+}
+footer p {
+	float: left;
+	width: 50%;
+}
+footer ul {
+	float: right;
+	text-align: right;
+	width: 30%;
+}
+footer ul li {
+	display: inline;
+	margin: 0;
+	padding: 0 0 0 15px;
+}
+footer a {
+	color: #DDD;
+	text-decoration: none;
+}
