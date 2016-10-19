@@ -6,7 +6,7 @@ class SalariedEmployee < Employee
 		@salary = salary
 	end
 	def calculate_salary
-		gross_weekly_pay = @salary / 52
+		gross_weekly_pay = @salary / 52.0
 		net_weekly_pay = gross_weekly_pay * 0.82
 		#returns the net weekly pay
 	end

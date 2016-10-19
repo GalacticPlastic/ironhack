@@ -1,5 +1,5 @@
 class HourlyEmployee < Employee
-	attr_accessor(:name, :email, :hourly_rate, :hours_worked)
+	attr_accessor(:hourly_rate, :hours_worked)
 	def initialize(name, email, hourly_rate, hours_worked)
 		@name = name
 		@email = email
