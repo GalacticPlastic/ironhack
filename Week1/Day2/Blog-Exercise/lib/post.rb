@@ -6,11 +6,11 @@ class Post
 		@text = text
 		@author = author
 	end
-	def publish_front_page
+	def print
 		puts "#{@title}"
 		puts "Posted on #{@date} by #{@author}."
-		puts "**************"
+		puts "*******************************************************"
 		puts "#{@text}"
-		puts "----------------"
+		puts "-------------------------------------------------------"
 	end
 end
