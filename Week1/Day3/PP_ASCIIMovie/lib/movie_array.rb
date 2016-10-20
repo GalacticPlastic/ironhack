@@ -5,7 +5,4 @@ class ConvertText
 		movie_list
 	end
 end
-
-
 #create a class w/class name and method
-
