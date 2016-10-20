@@ -1,10 +1,11 @@
 class Payroll
-	attr_accessor(:employees)
+  attr_accessor(:employees)
   def initialize(employees)
         @employees = employees
   end
   def notify_employee(employee)
     	puts "Dear #{employee.name},"
+      puts ""
       puts "Thank you for your hard work!"
       puts "Your paycheck for this week has been direct deposited to your account in the amount of $#{employee.calculate_salary}."
       puts "Please contact your HR if you have any questions or concerns."
