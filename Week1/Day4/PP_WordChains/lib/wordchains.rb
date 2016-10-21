@@ -32,7 +32,7 @@ class WordChain
 		while word1 != word2
         	for i in 0..word1.length - 1
         		if word1[i] != word2[i]
-	        		new_word = word1.clone
+	        		new_word = word1.clone                   # Back up variable?
 	        		new_word[i] = word2[i]
 		        	if @dictionary.exists?(new_word.join)
 		        		word1 = new_word
@@ -43,3 +43,5 @@ class WordChain
         end
     end
 end
+
+#Break command breaks out of a loop.
