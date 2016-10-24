@@ -17,6 +17,8 @@ class Blog
 		@page_end += 3
 	end
 	def publish_front_page(posts)
+		puts ""
+		
 		# .length Loop?
 		# array.length.times do |single_post|
 		# end

@@ -1,5 +1,6 @@
 class MultiPaymentEmployee < Employee
 	include SalariedPay
+	include HourlyPay
 	attr_accessor(:salary, :hourly_rate, :hours_worked)
 	def initialize(name, email, salary, hourly_rate, hours_worked)
 		@name = name
