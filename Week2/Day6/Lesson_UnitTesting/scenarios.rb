@@ -36,9 +36,3 @@ puts ""
 puts "BONUS:"
 puts "No arguments provided"
 p calculator.add == 0
-
-# => #add Short for "add" instance method of the StringCalculator class
-# => "It" string is a description of what is being test
-# => What is RSpec .to method?
-# => Expects are called "assertions".
-# => RSpec.describe is a "test suite"
