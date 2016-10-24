@@ -1,3 +1,4 @@
+require_relative("lib/board.rb")
 require_relative("lib/pieces.rb")
 require_relative("lib/piece_bishop.rb")
 require_relative("lib/piece_king.rb")
@@ -75,7 +76,11 @@ my_board.add_piece(white_pawn6)
 my_board.add_piece(white_pawn7)
 my_board.add_piece(white_pawn8)
 
-@piece[1][8].movement
+# => my_board.movement(4, 8, 4, 4)	==	"yes"		# => Black Queen
+# => my_board.movement(8, 8, 100, 100)	==	"no"
+# => Board must know that the starting and final positions are valid and on the board.
+
+# @piece[1][8].movement
 
 # # # # ----------- ROOK ----------- # # #
 # puts ""
@@ -146,15 +151,15 @@ my_board.add_piece(white_pawn8)
 # p white_queen.movement(3, 3) == "no"
 # puts ""
 # # # ----------- PAWN ----------- # # #
-# puts ""
-# puts "Valid White Pawn"
-# puts "--------------------"
-# p white_pawn.movement(2, 3) == "yes"
-# p white_pawn.movement(2, 4) == "yes"
+puts ""
+puts "Valid White Pawn"
+puts "--------------------"
+p white_pawn.movement(2, 3) == "yes"
+p white_pawn.movement(2, 4) == "yes"
 
-# puts ""
-# puts "Invalid White Pawn"
-# puts "--------------------"
-# p black_pawn.movement(2, 5) == "no"
-# p white_pawn.movement(3, 3) == "no"
+puts ""
+puts "Invalid White Pawn"
+puts "--------------------"
+p black_pawn.movement(2, 5) == "no"
+p white_pawn.movement(3, 3) == "no"
 # puts ""
