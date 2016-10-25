@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Best Pizza | Sinatra Blog</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1>What is the Best Pizza?</h1>
+			<div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<h2><img src="/pizza.gif">Deliciously Healthy!</h2>
+			<p>These are the ingredients for the best pizza!</p>
+			<ul>
+				<% @toppings.each do |ingredient| %>
+					<li><%= ingredient %></li>
+				<% end %>
+			</ul>
+		</div>
+		<footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer>
+	</body>
+</html>
