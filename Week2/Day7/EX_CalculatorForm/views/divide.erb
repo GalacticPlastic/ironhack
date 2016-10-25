@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DIVIDE with Mary's Supa Sweet Online Calculator</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1><img id="logo" src="/logo.png">Division</h1>
+			<div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<div id="content">
+				<h2>Dynamic Form with Ruby &amp; Sinatra!</h2>
+				<form action="/calculate_divide" method="POST">
+					<!-- <label for="number1"></label> -->
+					<input type="number" name="first_number" id="number1" placeholder="1st number"> /
+					<!-- <label for="number2"></label> -->
+					<input type="number" name="second_number" id="number2" placeholder="2nd number">
+					<button type="submit" name="operation" value="division">Calculate</button>
+				</form>
+			</div>
+		</div>
+		<footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer>
+	</body>
+</html>

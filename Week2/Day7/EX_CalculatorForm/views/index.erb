@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mary's Supa Sweet Online Calculator</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1><img id="logo" src="/logo.png">Online Calculator</h1>
+			<div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<div id="content">
+				<h2>Basic Calculations</h2>
+				<p>Please use either of the navigation menus to calculate an individual operation with this nifty online calculator!</p>
+				<br>
+				<h2>All-in-One Calculator</h2>
+				<form action="/calculate_all" method="POST">
+					<input type="number" name="first_number" id="number1" placeholder="1st number">
+					<select name="operator">
+						<option value="add">+</option>
+						<option value="subtract">-</option>
+						<option value="multiply">*</option>
+						<option value="divide">/</option>
+					</select>
+					<input type="number" name="second_number" id="number2" placeholder="2nd number">
+					<button type="submit" name="operation" value="calculate">Calculate</button>
+				</form>
+			</div>
+		</div>
+		<footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer>
+	</body>
+</html>

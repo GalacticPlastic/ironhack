@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mary's Supa Sweet Online Calculator | Result!</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1><img id="logo" src="/logo.png">Calculation Result</h1>
+			<div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<div id="content">
+				<!-- Response -->
+				<p>The <%= @value %> of <%= @first_number %> and <%= @second_number %> is:
+				<br><%= @result %>.</p>
+
+
+			</div>
+		</div>
+		<footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer>
+	</body>
+</html>
