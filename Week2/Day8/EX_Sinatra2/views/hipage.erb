@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>This is the Hi Page | Sinatra Blog</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1>Hello, This is a Page</h1>
+			<div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<div id="content">
+				<p>Wow, this is a really confusing way to create HTML content. How do you add JavaScript and CSS files like this? Seems like things would get convoluted real quick.</p>
+				<p>One more dummy paragraph for good measure.</p>
+			</div>
+		</div>
+		<footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer>
+	</body>
+</html>

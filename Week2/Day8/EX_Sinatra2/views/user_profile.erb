@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title><% page_title %></title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1>User Profile</h1>
+			<div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<h2><%= @full_name %></h2>
+			<img src="<%= @avatar %>">
+			<p><a href="#"><%= @screen_name %></a></p>
+			<!-- <p>< %= @bio %></p>
+			<p>Joined on: < %= @join_date %></p> -->
+		</div>
+		<footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer>
+	</body>
+</html>

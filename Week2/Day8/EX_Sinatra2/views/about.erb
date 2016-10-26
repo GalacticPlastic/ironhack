@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>This is the About Page | Sinatra Blog</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1>Title for the About Page</h1>
+			<div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<div id="content">
+				<p>Wow, this is a really confusing way to create HTML content. How do you add JavaScript and CSS files like this? <br>Seems like things would get convoluted real quick.</p>
+				<p>One more dummy paragraph for good measure.</p>
+				<% if Date.today.monday? %>
+					<p>Izzy Ironside is <strong>NOT</strong> a fan of Mondays, like today.</p>
+				<% elsif Date.today.wednesday? %>
+					<p>Happy Hump Day! <br>Beats Monday, eh?</p>
+				<% else %>
+					<p>Just another weekday, who cares?</p>
+				<% end %>
+				<p>Izzy Ironside was born on <strong><%= Time.now %></strong>.</p>
+			</div>
+		</div>
+		<footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer>
+	</body>
+</html>
