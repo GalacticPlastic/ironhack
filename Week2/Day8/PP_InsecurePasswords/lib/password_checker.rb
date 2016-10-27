@@ -1,12 +1,11 @@
 class PasswordChecker
 	def check_password(email, password)
 		user_domain = email.split(/[@.]/)
-		password_array = password.chars  				# => .to_a
 		uppercase = password =~ (/[[:upper:]]/)
 		lowercase = password =~ (/[[:lower:]]/)
 		numbers = password =~ (/[[:digit:]]/)
-		symbol = password =~ (/[[:punct:]]/)			# => (/^[[::]]$/)
-		if password.length < 7
+		symbol = password =~ (/[[:punct:]]/)
+		if password.length < 8
 			false
 		elsif password.include?(user_domain[0])
 			false
@@ -25,7 +24,10 @@ class PasswordChecker
 		end
 	end
 end
-# => Longer than 7 characters
-# => Contain at least 1 letter, 1 number and 1 symbol (e.g. "#", "%"; etc.)
-# => Contain at least 1 uppercase and 1 lowercase letter
+# => Longer than 7 characters.
+# => Contain at least 1 letter, 1 number and 1 symbol (e.g. "#", "%"; etc.).
+# => Contain at least 1 uppercase and 1 lowercase letter.
 # => DOES NOT contain either the name or domain of the email.
+# => =~ and .match similar, with subtle differences.
+# => Removed /[[:alpha]]/ because it was redundant, as (/[[:upper:]]/) and (/[[:lower:]]/) covers all letters. (Thanks NB)
+# => /[a-zA-Z]/ same as /[[:alpha]]/ ??
