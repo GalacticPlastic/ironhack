@@ -1,0 +1,13 @@
+guard :rspec, cmd: 'bundle exec rspec --color' do
+	watch(%r{^spec/.+_spec\.rb$})
+	watch(%r{^lib/(.+)\.rb$}) { |m| "spec/#{m[1]}_spec.rb" }
+	watch("app.rb") { |m| "spec/app_spec.rb" }
+end
+
+
+# => %r{}  Syntax for Regular Expressions
+# => ^ starts the string. $ ends the string.
+# => ^spec/.+_spec\.rb$ searches for files in /spec/ that end with .rb.
+
+
+# => Guard and RSpec gems full automate QC!!!
