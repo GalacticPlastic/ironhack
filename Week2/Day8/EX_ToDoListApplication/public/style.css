@@ -36,14 +36,40 @@ img {
 	display: inline-block;
 	float: right;
 	padding: 0 0 10px 25px;
-	width: 400px;
+	width: 350px;
 }
 input[type="text"], input[type="number"] { padding: 5px; }
 /*select { height: 60px !important; }*/
 button[type="submit"] {
 	display: block;
 	margin: 5px 0;
-	padding: 5px 10px;
+	padding: 0;
+}
+.item_wrap {
+	background: #f2f2f2;
+	border: #ddd 1px solid;
+	list-style: none;
+	margin-bottom: 5px;
+	padding: 3px 20px;
+	width: 700px;
+}
+.pending {
+	color: red;
+	font-weight: bold;
+}
+.finished { text-decoration: line-through; }
+.pending, .finished {
+	display: inline-block;
+	float: left;
+	line-height: 40px;
+	width: 400px;
+}
+.item_wrap button {
+	display: inline-block;
+	float: right;
+	line-height: 30px;
+	margin-left: 5px;
+	width: 120px;
 }
 #menu {
 	background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/binding_dark.png') top left repeat;
@@ -76,3 +102,4 @@ footer ul {
 	text-align: center;
 	width: 700px;
 }
+.clear { clear: both; }

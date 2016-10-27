@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>This is the Home Page | Sinatra Blog</title>
+		<title>Ironhack Week 2, Day 8 Ruby Exercise</title>
 		<link rel="stylesheet" type="text/css" href="/style.css">
 	</head>
 	<body>
 		<div id="container">
-			<h1>Sinatra Exercise</h1>
+			<h1>Dynamic To Do List</h1>
 			<div id="menu">
 				<ul class="nav">
 					<% @menu.each do |title, url| %>
@@ -15,11 +15,29 @@
 				</ul>
 			</div>
 			<div id="content">
-				<h2>Long Day?</h2>
-				<p>How 'bout a <strong><%= @drank %></strong>? It's your favorite!
-				<br>Glug, glug, glug.</p>
-				<p>Okay, all this back-end stuff is totes amazing, but this is still a sucky way to structure HTML content. How do you add includes for layout structures in Ruby/Sinatra? So much copy pasta.</p>
-				<p>One more dummy paragraph for good measure.</p>
+				<h2>All Tasks:</h2>
+				<% @tasks.each do |the_task| %>
+					<div class="item_wrap">
+						<% if the_task.complete? == false %>
+							<div class="pending"><%= the_task.content %> </div>
+							<form action="/complete_task" method="POST">
+								<input type="hidden" name="task_id" value="<%= the_task.id %>">
+								<button type="submit">Mark Complete</button>
+							</form>
+						<% else %>
+							<div class="finished"><%= the_task.content %></div>
+							<form action="/uncomplete_task" method="POST">
+								<input type="hidden" name="task_id" value="<%= the_task.id %>">
+								<button type="submit">Undo Complete</button>
+							</form>
+						<% end %>
+						<form action="/delete_task" method="POST">
+							<input type="hidden" name="task_id" value="<%= the_task.id %>">
+							<button type="submit">Delete Task</button>
+						</form>
+						<div class="clear"></div>
+					</div>
+				<% end %>
 			</div>
 		</div>
 		<footer>

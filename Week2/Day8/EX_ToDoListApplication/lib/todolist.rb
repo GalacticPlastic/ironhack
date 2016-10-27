@@ -18,4 +18,7 @@ class TodoList
     		# => Nvm, default function of .find method, lol!
     	end
     end
+    def load_tasks
+
+    end
 end

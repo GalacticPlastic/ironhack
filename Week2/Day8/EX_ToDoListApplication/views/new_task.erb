@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>To Do List Application</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1>Add a New Task to the To Do List</h1>
+			<div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<div id="content">
+				<form action="/create_task" method="POST">
+					<input type="text" name="task_name" placeholder="Describe Task">
+					<button type="submit" name="add_task" value="Submit">Add to List</button>
+				</form>
+			</div>
+		</div>
+		<footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer>
+	</body>
+</html>
