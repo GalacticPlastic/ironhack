@@ -10,16 +10,17 @@ Should Be:
 - Run at the Push of a Button
 - Quick
 
-NOTES
-=============================================================
-=> #add Short for "add" instance method of the StringCalculator class
-=> "It" string is a description of what is being test
-=> What is RSpec .to method?
-=> Expects are called "assertions".
-=> RSpec.describe is a "test suite"
+## NOTES
+* #add Short for "add" instance method of the StringCalculator class
+* "It" string is a description of what is being test
+* What is RSpec .to method?
+* Expects are called "assertions".
+* RSpec.describe is a "test suite"
 
-input = number_string.split(',')
-=> Must convert array elements into Integers!
+```ruby
+	input = number_string.split(',')
+```
+* Must convert array elements into Integers!
    .to_i  ??
    .to_i method of strings, can be applied to each array element within sum loop
    .to_i cannot be applied directly to an array:
@@ -32,21 +33,27 @@ input = number_string.split(',')
 
  => Refactor repeated oject definitions across all RSpec unit tests by:
  	1) Adding after describe "#method" do
+ 	```ruby
  		before :each do
 			@variable_name = ClassName.new
 		end
+	```
 		--> variable must be turned into instance variable w/ @ in front of variable name.
 
 	2) Adding after describe "#method" do
+	```ruby
 		let @variable_name do
 			ClassName.new
 		end
+	```
 		--> "let" refactoring method preferred over ":each" refactoring method.
 
 # ----- Nizar Solution: ----- #
+```ruby
 class StringCalculator
 	def add(numbers_string = "")
 		=> nil.to_i == 0
 		numbers_string[0].to_i + numbers_strong[2].to_i
 	end
 end
+```
