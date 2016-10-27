@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sinatra Week 2 Blog Exercise</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1>Tech Links &amp; Web Favs</h1>
+			<!-- <div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div> -->
+			<div id="content">
+				<% @posts.each do |post| %>
+					<%= post.title %>
+				<% end %>
+			</div>
+		</div>
+		<!-- <footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer> -->
+	</body>
+</html>
