@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>This is the Home Page | Sinatra Blog</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1>Sinatra Exercise</h1>
+			<div id="menu">
+				<ul class="nav">
+					<% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<div id="content">
+				<h2>Long Day?</h2>
+				<p>How 'bout a <strong><%= @drank %></strong>? It's your favorite!
+				<br>Glug, glug, glug.</p>
+				<p>Okay, all this back-end stuff is totes amazing, but this is still a sucky way to structure HTML content. How do you add includes for layout structures in Ruby/Sinatra? So much copy pasta.</p>
+				<p>One more dummy paragraph for good measure.</p>
+			</div>
+		</div>
+		<footer>
+			<ul class="nav">
+				<% @menu.each do |title, url| %>
+					<li><a href="/<%= url %>"><%= title %></a></li>
+				<% end %>
+			</ul>
+		</footer>
+	</body>
+</html>
