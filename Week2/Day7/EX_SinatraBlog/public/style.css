@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; }
 body {
-	background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/seigaiha.png');
+	background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/seigaiha.png') top left repeat;
 	font-family: Tahoma, sans-serif;
 	font-size: 0.9em;
 	line-height: 1.8em;
@@ -28,14 +28,14 @@ img {
 	width: 400px;
 }
 #menu {
-	background: #333;
+	background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/tweed.png') top left repeat;
 	color: #666;
 	margin: 0 auto 20px;
 	padding: 10px 25px;
 	width: 750px;
 }
 footer {
-	background: #333;
+	background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/tweed.png') top left repeat;
 	color: #666;
 	padding: 20px;
 }

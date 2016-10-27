@@ -18,8 +18,10 @@
 				<!-- Response -->
 				<p>The <%= @value %> of <%= @first_number %> and <%= @second_number %> is:
 				<br><%= @result %>.</p>
-
-
+				<form method="post" action="/save_form">
+					<input type="hidden" name="result" value="<%= @result %>">
+					<button type="submit" name="memory" value="save_form">Save Calculation</button>
+				</form>
 			</div>
 		</div>
 		<footer>

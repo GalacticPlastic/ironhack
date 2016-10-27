@@ -9,6 +9,7 @@ menu = {
 }
 get "/" do
   @menu = menu
+  @memory_number = my_memory.load_file
   erb(:index)
 end
 get "/add" do
@@ -92,24 +93,9 @@ post "/calculate_all" do
 	# redirect to("/result")
 	erb(:result)
 end
-get "/calculate_all" do
+get "/save_form" do
 	@menu = menu
-	@first_number = params[:first_number].to_f
-	@second_number = params[:second_number].to_f
-	new_calculation = Calculator.new
-	if params[:operator] == "add"
-		@value = "sum"
-		@result = new_calculation.add(@first_number, @second_number)
-	elsif params[:operator] == "subtract"
-		@value = "difference"
-		@result = new_calculation.subtract(@first_number, @second_number)
-	elsif params[:operator] == "multiply"
-		@value = "product"
-		@result = new_calculation.multiply(@first_number, @second_number)
-	elsif params[:operator] == "divide"
-		@value = "quotient"
-		@result = new_calculation.divide(@first_number, @second_number)
-	end
-	save_data = File.new("/lib/form-data.txt", [@operator, @first_number, @second_number, @result])
-	erb(:result)
+	my_memory = Memory.new
+	my_memory.save_submission(params[:result])
+	redirect to("/")
 end
