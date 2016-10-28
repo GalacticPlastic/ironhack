@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+gem "rspec"
+gem "guard"
+gem "guard-rspec"
+gem "sinatra"
+gem "sinatra-contrib"
+gem "imdb", :git => "https://github.com/nickborbe/imdb.git"

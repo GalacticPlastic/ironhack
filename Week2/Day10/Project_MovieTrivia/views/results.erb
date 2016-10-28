@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ironhack Week 2, Movie Trivia Project</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1>Search Results</h1>
+			<div id="trivia" style="padding-left: 30px;">
+				
+				<!-- On Page Load ask question. -->
+
+				<% @movies.take(9).each do |the_movie| %>
+
+				<!-- how to .shuffle list? -->
+				<!-- pick winner of question using set array index[n] (which is fine if shuffled every time) -->
+
+					<% if the_movie.poster != nil %>
+						<div class="poster">
+							<a href="#"><img src="<%= the_movie.poster %>" height="311" width="220"></a>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+			<div class="clear"></div>
+			<a id="new-game" href="/">Play Again!</a>
+		</div>
+	</body>
+</html>
+
+<!-- onClick="alert('YUP!')" -->
