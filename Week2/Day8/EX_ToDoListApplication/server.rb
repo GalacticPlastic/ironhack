@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/reloader' if development?
 require_relative('lib/task.rb')
 require_relative('lib/todolist.rb')
 menu = {
@@ -13,7 +13,7 @@ todo_list.add_task Task.new("Come in with the milk!")
 todo_list.load_tasks
 get "/" do
 	@menu = menu
-	@tasks = todo_list.tasks
+	@tasks = todo_list.tasks 			# => this is the array
 	# => Display all tasks
 	erb(:home)
 end
@@ -42,7 +42,8 @@ post "/uncomplete_task" do
 	redirect to("/")
 end
 post "/delete_task" do
-	task_id = params[:task_id].to_i
-	todo_list.delete_task(task_id)
+	# task_id = params[:task_id].to_i
+	# todo_list.delete_task(task_id)
+	todo_list.delete_task(params[:task_id].to_i)	# Refactored
 	redirect to("/")
 end
