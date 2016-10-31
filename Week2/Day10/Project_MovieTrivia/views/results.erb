@@ -8,17 +8,15 @@
 		<div id="container">
 			<h1>Search Results</h1>
 			<div id="trivia" style="padding-left: 30px;">
-				
-				<!-- On Page Load ask question. -->
-
+				<h2>Which Movie was Filmed in <%= @trivia_question.year %>?</h2>
 				<% @movies.take(9).each do |the_movie| %>
-
-				<!-- how to .shuffle list? -->
 				<!-- pick winner of question using set array index[n] (which is fine if shuffled every time) -->
-
 					<% if the_movie.poster != nil %>
 						<div class="poster">
-							<a href="#"><img src="<%= the_movie.poster %>" height="311" width="220"></a>
+							<form method="POST" action="/trivia_answer">
+								<input type="hidden" name="">
+								<a href="#"><img src="<%= the_movie.poster %>" height="311" width="220"></a>
+							</form>
 						</div>
 					<% end %>
 				<% end %>

@@ -10,21 +10,22 @@ end
 
 get "/search_results" do
 	new_search = Imdb::Search.new(params[:new_search])
-	@movies = new_search.movies.shuffle
+	@movies = new_search.movies
+
+	trivia_question = @movies.shuffle.sample
+	@trivia_question = trivia_question
 	erb :results
 end
 
-
+post "/trivia_answer" do
+	
+end
 
 # => Usable Gem methods:
 # .poster()
 # .year()
 # .cast_member_ids()
 # .cast_members()
-
-
-# Iteration 1:
-# Return 9 movies that match search term.
 
 # Iteration 2:
 # Method to filter out no poster movies (Must QC).
@@ -38,3 +39,6 @@ end
 
 # Bonus:
 # Ask user which movie has a certain actor
+
+# @movies.each_with_index do  |the_movie, index|
+# 	if index == rand(9)
