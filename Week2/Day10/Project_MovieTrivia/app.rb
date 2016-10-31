@@ -17,13 +17,13 @@ get "/search_results" do
 	erb :results
 end
 
-post "/trivia_answer" do
-	if @trivia_question = movie_option
-		puts "Yup! You win!!"
-	else
-		puts "Nope! Try again!"
-	end
-end
+# post "/trivia_answer" do
+# 	if @trivia_question = params[:movie_option]
+# 		puts "Yup! You win!!"
+# 	else
+# 		puts "Nope! Try again!"
+# 	end
+# end
 
 # => Usable Gem methods:
 # .poster()

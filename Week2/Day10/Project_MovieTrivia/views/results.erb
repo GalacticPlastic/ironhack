@@ -15,7 +15,13 @@
 					<% if the_movie.poster != nil %>
 						<div class="poster">
 							<form method="POST" action="/trivia_answer">
-								<input type="image" name="movie_option" src="<%= the_movie.poster %>" height="311" width="220">
+								<% if movie.year == @trivia_question.year %>
+									<img src="<%= the_movie.poster %>" height="311" width="220" onclick="alert(Yup! You win!)">
+									<!-- <input type="image" name="movie_option" src="<%= the_movie.poster %>" height="311" width="220"> -->
+								<% else %>
+									<img src="<%= the_movie.poster %>" height="311" width="220" onclick="alert(Nope! Try again.)">
+									<!-- <input type="image" name="movie_option" src="<%= the_movie.poster %>" height="311" width="220"> -->
+								<% end %>
 							</form>
 						</div>
 					<% end %>
@@ -26,4 +32,3 @@
 		</div>
 	</body>
 </html>
-<!-- onClick="alert('YUP!')" -->
