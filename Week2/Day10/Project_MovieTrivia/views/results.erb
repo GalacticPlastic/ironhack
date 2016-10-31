@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Ironhack Week 2, Movie Trivia Project</title>
+		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="/style.css">
 	</head>
 	<body>
@@ -14,8 +15,7 @@
 					<% if the_movie.poster != nil %>
 						<div class="poster">
 							<form method="POST" action="/trivia_answer">
-								<input type="hidden" name="">
-								<a href="#"><img src="<%= the_movie.poster %>" height="311" width="220"></a>
+								<input type="image" name="movie_option" src="<%= the_movie.poster %>" height="311" width="220">
 							</form>
 						</div>
 					<% end %>
@@ -26,5 +26,4 @@
 		</div>
 	</body>
 </html>
-
 <!-- onClick="alert('YUP!')" -->
