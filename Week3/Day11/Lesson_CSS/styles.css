@@ -1,0 +1,162 @@
+* { margin: 0; padding: 0; }
+/*-- Globals --*/
+body {
+	background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/seigaiha.png') top left repeat;;
+	font-family: Century Gothic, sans-serif;
+	font-size: 13px;
+	line-height: 1.7em;
+}
+header, main, footer {
+	color: #333;
+	margin: 0 auto;
+}
+header { width: 850px; }
+nav {
+	background: #333;
+}
+nav ul { padding: 10px 0; }
+nav ul li a {
+	color: #eee;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 0 20px;
+}
+main {
+	background: #fff;
+	border-radius: 5px;
+	padding: 20px;
+	width: 810px;
+}
+h1 {
+	font-size: 2.8em;
+	font-weight: normal;
+	line-height: 60px;
+	margin: 20px 0;
+	text-align: center;
+}
+h2, h3 { margin: 15px 0; }
+h4 { margin: 15px 0 0; }
+p {
+	margin: 10px 0;
+	text-align: justify;
+}
+section {
+	background: #efefef;
+	border: #ddd 1px solid;
+	border-radius: 3px;
+	padding: 0 20px 20px;
+	margin: 20px 0;
+}
+.clear { clear: both; }
+/*-- Navs --*/
+ul li {
+	display: inline-block;
+	list-style: none;
+}
+/*-- Content --*/
+section#categories {
+	background: #f8f8f8;
+	border: #ececec 1px solid;
+	padding: 0 20px 20px;
+	margin: 0;
+}
+article {
+	display: inline-block;
+	float: left;
+	width: 530px;
+}
+aside {
+	display: inline-block;
+	float: right;
+	width: 230px;
+}
+aside ul li {
+	list-style: disc inside none;
+	display: block;
+	font-weight: bold;
+}
+aside ul li a { 
+	color: #666;
+	text-decoration: none;
+}
+article img {
+	display: inline-block;
+	float: right;
+	max-width: 400px;
+	margin: 0 0 10px 30px;
+}
+/*-- New Comment --*/
+form {
+	padding: 15px 0;
+	width: 450px;
+}
+label {
+	display: inline-block;
+	float: left;
+	margin-bottom: 10px;
+	width: 80px;
+}
+input[type="text"], textarea {
+	border: #ddd 1px solid;
+	display: inline-block;
+	float: right;
+	padding: 5px 20px;
+	width: 300px;
+}
+input[type="checkbox"] {
+	margin: 15px 0 0 80px;
+}
+label.save-commenter {
+	float: right !important;
+	margin-top: 10px;
+	width: 342px;
+}
+input[type="submit"] {
+	margin-left: 110px;
+	padding: 20px;
+}
+/*-- Comments --*/
+.comment {
+	background: #f7f7f7;
+	margin-top: 10px;
+	padding: 10px 20px 35px;
+}
+.comment img {
+	border: 5px #fff solid;
+	float: left;
+	height: 120px;
+	margin: 6px 20px 60px 0;
+	width: 120px;
+}
+/*-- Footer --*/
+footer {
+	background: #333;
+	padding: 5px 20px;
+	width: 810px;
+}
+footer p, footer ul {
+	display: inline-block;
+	margin: 0;
+	padding: 10px 0;
+}
+footer ul {
+	float: left;
+	text-align: left;
+	width: 50%;
+}
+footer ul li {
+	display: inline;
+	margin: 0;
+}
+footer ul li a {
+	color: #eee;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 0 20px;
+}
+footer p {
+	color: #eee;
+	float: right;
+	text-align: right;
+	width: 40%;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Week 2: HTML and CSS Best Practices Lesson</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+		<header>
+			<h1>This is a Sample Blog</h1>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Category 1</a></li>
+					<li><a href="#">Category 2</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<article>
+				<h2>Title of the Blog Post</h2>
+				<p><img src="http://blog.dominictrumfio.com/wp-content/uploads/2015/08/Lorem-Ipsum-2.jpg"><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+				<p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<h3>Why Do We Use It?</h3>
+				<blockquote>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</blockquote>
+				<p>Contrary to popular belief, <strong>Lorem Ipsum</strong> is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it <em>over 2000 years old</em>. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+				<h3>A Subtitle for the Subtitle</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<section id="author-info">
+					<h4>About the Author:</h4>
+					<p>Posted by <a id="post-author" href="#">Author Name</a> on <strong id="post-date">October 31<sup>st</sup>, 2016</strong>.</p>
+				</section>
+				<section id="post-comment">
+					<h4>Post a Comment!</h4>
+					<form>
+						<label for="name">Name:</label>
+						<input name="name" type="text" placeholder="Name">
+						<div class="clear"></div>
+						<label for="email">Email:</label>
+						<input name="email" type="text" placeholder="Email Address">
+						<div class="clear"></div>
+						<label for="comment">Comment:</label>
+						<textarea name="comment" type="text" placeholder="Share your comment here" rows="8"></textarea>
+						<div class="clear"></div>
+						<input type="checkbox" name="save-commenter" value="Remember Me" checked>
+						<label for="save-commenter" class="save-commenter">Remember Me!</label>
+						<div class="clear"></div>
+						<input type="submit" name="add-comment" value="Submit">
+						<div class="clear"></div>
+					</form>
+				</section>
+				<section id="comments">
+					<h4>All Comments</h4>
+					<section class="comment">
+						<p><img class="avatar" src="https://www.jobstowin.com/static/images/user-avatar-placeholder.png">This is a sample comment. Blah, blah, blah. Rump bacon chuck velit spare ribs short ribs consectetur. Pork belly ullamco laborum andouille hamburger qui swine, non anim turkey sirloin commodo venison pork loin pig. Spare ribs anim alcatra salami, meatloaf andouille sausage incididunt ea dolore frankfurter venison rump commodo.</p>
+						<h6>- My2Cents</h6>
+					</section>
+					<section class="comment">
+						<p><img class="avatar" src="https://www.jobstowin.com/static/images/user-avatar-placeholder.png">Bacon ipsum dolor amet shank et eiusmod, turducken dolore ham hock brisket. Irure beef ribs velit veniam, pork belly in cow adipisicing pork loin ut id pork chop drumstick.</p>
+						<h6>- My2Cents</h6>
+					</section>
+				</section>
+			</article>
+			<aside>
+				<section id="categories">
+					<h2>Categories</h2>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Category 1</a></li>
+						<li><a href="#">Category 2</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</section>
+			</aside>
+			<div class="clear"></div>
+		</main>
+		<footer>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Category 1</a></li>
+					<li><a href="#">Category 2</a></li>
+					<li><a href="#">Contact</a></li>
+					<!-- <% @menu.each do |title, url| %>
+						<li><a href="/<%= url %>"><%= title %></a></li>
+					<% end %> -->
+				</ul>
+			</nav>
+			<p>&copy; 2016 - Ironhack Full-Stack.</p>
+			<div class="clear"></div>
+		</footer>
+	</body>
+</html>
