@@ -1,0 +1,110 @@
+* { margin: 0; padding: 0; }
+.clear { clear: both; }
+body {
+	background: #fff;
+	font-family: 'Proxima Nova Regular', Helvetica, Arial, sans-serif;
+}
+header {
+	margin: 0 auto;
+	padding: 20px 50px;
+}
+#logo {
+	display: inline-block;
+	float: left;
+	height: 69px;
+	width: 230px;
+}
+nav {
+	display: inline-block;
+	float: right;
+	/*height: px;
+	width: px;*/
+}
+nav ul { list-style: none; }
+nav ul li {
+	display: inline-block;
+	line-height: 69px;
+	list-style: none;
+	padding: 0 20px;
+}
+nav ul li:last-child { padding-right: 0; }
+nav ul li a {
+	color: #000;
+	font-weight: normal;
+	text-decoration: none;
+}
+#banner {
+	background: #000 url(images/Landing.jpg) top center no-repeat;
+	background-size: 1400px 840px;
+	color: #fff;
+	display: block;
+	padding: 350px 0;
+	text-align: center;
+	width: 100%;
+}
+#banner h2 {
+	font-size: 60px;
+	font-weight: normal;
+	line-height: 60px;
+	margin: 0 0 20px;
+}
+#banner p {
+	font-size: 22px;
+	font-weight: normal;
+	line-height: 30px;
+	margin: 0 auto;
+	width: 500px;
+}
+#features {
+	background: #fff;
+	margin: 0 auto;
+	padding: 55px 0;
+	width: 1200px;
+}
+#features h2 {
+	border-bottom: #1ab16a 3px solid;
+	font-weight: normal;
+	margin: 0 auto 60px;
+	padding-bottom: 12px;
+	text-align: center;
+	width: 200px;
+}
+#features h3 {
+	color: #0abb7d;
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+#features p {
+	font-size: 18px;
+	line-height: 24px;
+	margin: 0 auto;
+	text-align: center;
+	width: 200px;
+}
+#songs { background: url(images/Music-icon.png) top center no-repeat; }
+#hd { background: url(images/High-quality-icon.png) top center no-repeat; }
+#stream { background: url(images/Devices-icon.png) top center no-repeat; }
+#songs, #hd, #stream {
+	display: inline-block;
+	float: left;
+	height: px;
+	padding: 120px 0 0;
+	margin: 0 auto;
+	text-align: center;
+	width: 33%;
+}
+
+footer {
+	background: #1ab16a;
+	color: #fff;
+	padding: 85px 100px;
+}
+#instructions {
+	
+}
+#icon {
+	
+}
+#mobile {
+	
+}
