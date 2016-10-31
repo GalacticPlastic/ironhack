@@ -1,0 +1,29 @@
+* { margin: 0; padding: 0; }
+body { background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sayagata-400px.png) top left repeat; }
+.box {
+	color: #555;
+	margin: 10px auto;
+	text-align: center;
+	width: 300px;
+}
+.blue  {
+	background: #E6FCFF;
+	border: 1px solid red;
+}
+.green { background: #EAFFEF; }
+#red  {
+	background: #FF2626;
+	border: 1px solid blue;
+	color: #222;
+}
+#top {
+	left: 350px;
+	position: absolute;
+	top: 350px;
+}
+#bottom {
+	left: 500px;
+	position: absolute;
+	top: 400px;
+}
+h3.direction { padding: 20px; }
