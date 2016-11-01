@@ -1,0 +1,30 @@
+* { margin: 0; padding: 0; }
+body {
+	background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/ignasi_pattern_s.png) top left repeat;
+	padding: 40px 30px 0;
+}
+header, section, aside, footer {
+	border: 4px double #bbb;
+	border-radius: 10px;
+	margin: 0 1.5% 24px;
+}
+section {
+	left: 400px;
+	position: absolute;
+	top: 200px;
+}
+code {
+	background: #2db34a;
+	border-radius: 6px;
+	color: #fff;
+	display: block;
+	padding: 25px 15px;
+	text-align: center;
+}
+img {
+	display: inline-block;
+	float: right;
+	height: auto;
+	width: 300px;
+}
+footer { clear: both; }
