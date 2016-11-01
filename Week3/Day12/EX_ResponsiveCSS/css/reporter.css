@@ -1,0 +1,71 @@
+* { margin: 0; padding: 0; }
+body {
+  background: url(https://media.giphy.com/media/8j3ygXvEuWs12/giphy.gif) top left repeat;
+  background-size: cover;
+  color: #eee;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  text-shadow: #111 2px 2px;
+}
+body:after {
+  background: #000;
+  bottom: 0;
+  color: #fff;
+  content: "Extra small screens (less than 768px)"; /* Extra small-only styles */
+  font-size: 200%;
+  font-weight: bold;
+  left: 0;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+}
+h1 {
+  color: #111;
+  font-size: 2em;
+  text-shadow: #fff 1px 1px;
+}
+@media screen and (min-width: 768px) {
+  body {
+    background: #000 url(http://www.planwallpaper.com/static/images/6768666-1080p-wallpapers.jpg) center top no-repeat;
+    background-size: cover;
+  }
+  body:after {
+    background-color: #999;
+    content: "Small screens (768px - 992px)";
+  }
+  h1 {
+    color: yellow;
+    font-size: 3em;
+    text-shadow: #111 2px 2px;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    background: #000 url(http://walops.com/wp-content/uploads/Spring-1080p-HD-Desktop-Wallpaper.jpg) center top no-repeat;
+    background-size: cover;
+  }
+  body:after {
+    background-color: #666;
+    content: "Medium screens (992px - 1200px)";
+  }
+  h1 {
+    color: pink;
+    font-size: 5em;
+    text-shadow: #111 3px 3px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    background: #000 url(https://www.planwallpaper.com/static/images/butterfly-wallpaper.jpeg) center top no-repeat;
+    background-size: cover;
+  }
+  body:after {
+    content: "Large screens (1200px and greater)";
+  }
+  h1 {
+    color: orange;
+    font-size: 8em;
+    text-shadow: #111 4px 4px;
+  }
+}

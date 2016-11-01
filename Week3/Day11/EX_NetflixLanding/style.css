@@ -48,6 +48,7 @@ a#signin {
 }
 #cta {
 	background: rgba(0, 0, 0, 0.85);
+	clear: both;
 	margin: 130px auto 0;
 	opacity:0.85;
 	padding: 50px 30px 50px 40px;
@@ -96,4 +97,9 @@ a#newtrial {
 	width: 182px;
 }
 .posters:last-child { margin-right: 0; }
+.last:after {
+    content: '';
+    display: block;
+    clear: both;
+}
 .clear { clear: both; }
