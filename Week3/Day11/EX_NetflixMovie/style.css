@@ -1,25 +1,25 @@
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: lighter;
+  src: url(fonts/ProximaNova-Light.otf) format("opentype");
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: normal;
+  src: url(fonts/ProximaNova-Reg.otf) format("opentype");
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  src: url(fonts/ProximaNova-Sbold.otf) format("opentype");
+}
 * { margin: 0; padding: 0; }
 body {
 	background: #333 url(images/landing.jpg) top center no-repeat;
-	background-size: 1500px 920px;
-	font-family: 'Proxima Nova Regular', Helvetica, Arial, sans-serif;
+	/*background-size: 1500px 920px;*/
+	background-size: cover;
+	font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
 }
-@font-face {
-  font-family: ProximaNova;
-  font-weight: normal;
-  src: local("ProximaNova-Light"), url(fonts/ProximaNova-Light.otf);
-}
-@font-face {
-  font-family: ProximaNova;
-  font-weight: lighter;
-  src: local("ProximaNova-Regular"), url(fonts/ProximaNova-Reg.otf);
-}
-@font-face {
-  font-family: ProximaNova;
-  font-weight: bold;
-  src: local("ProximaNova-Semibold"), url(fonts/ProximaNova-Sbold.otf);
-}
-.clear { clear: both; }
 header {
 	background: #000;
 	padding: 30px 0;
@@ -39,7 +39,6 @@ header {
 }
 #featured-movie h2 {
 	color: #fff;
-	font-family: 'Proxima Nova Semibold', Helvetica, Arial, sans-serif;
 	font-size: 50px;
 	font-weight: normal;
 	line-height: 40px;
@@ -68,7 +67,6 @@ a#watch-later {
 	background: #fff;
 	color: red;
 	display: block;
-	font-family: 'Proxima Nova Light', Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-weight: bold;
 	margin: 15px 0 0;
@@ -84,3 +82,4 @@ a#watch-later {
 	padding: 210px 0 0 20px;
 	width: 188px;
 }
+.clear { clear: both; }

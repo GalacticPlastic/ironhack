@@ -1,8 +1,7 @@
 * { margin: 0; padding: 0; }
-.clear { clear: both; }
 body {
 	background: #fff;
-	font-family: 'Proxima Nova Regular', Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 }
 header {
 	margin: 0 auto;
@@ -34,8 +33,9 @@ nav ul li a {
 	text-decoration: none;
 }
 #banner {
-	background: #000 url(images/Landing.jpg) top center no-repeat;
-	background-size: 1400px 840px;
+	background: #000 url(images/Landing.jpg) top left no-repeat;
+	/*background-size: 1400px 840px;*/
+	background-size: cover;
 	color: #fff;
 	display: block;
 	padding: 350px 0;
@@ -108,3 +108,4 @@ footer {
 #mobile {
 	
 }
+.clear { clear: both; }

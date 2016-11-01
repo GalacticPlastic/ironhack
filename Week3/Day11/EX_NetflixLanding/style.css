@@ -1,29 +1,31 @@
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: lighter;
+  src: url(fonts/ProximaNova-Light.otf) format("opentype");
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: normal;
+  src: url(fonts/ProximaNova-Reg.otf) format("opentype");
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  src: url(fonts/ProximaNova-Sbold.otf) format("opentype");
+}
 * { margin: 0; padding: 0; }
 body {
-	background: #333 url(images/family.jpg) top center no-repeat;
-	font-family: 'Proxima Nova Regular', Helvetica, Arial, sans-serif;
+	background: #000;
+	font-family: "ProximaNova", Helvetica, Arial, sans-serif;
 }
-@font-face {
-  font-family: Proxima Nova Light;
-  font-weight: normal;
-  src: local("ProximaNova-Light"), url(fonts/ProximaNova-Light.otf);
-}
-@font-face {
-  font-family: Proxima Nova Regular;
-  font-weight: normal;
-  src: local("ProximaNova-Regular"), url(fonts/ProximaNova-Reg.otf);
-}
-@font-face {
-  font-family: Proxima Nova Semibold;
-  font-weight: bold;
-  src: local("ProximaNova-Semibold"), url(fonts/ProximaNova-Sbold.otf);
-}
-.clear { clear: both; }
 #banner {
+	background: url(images/family.jpg) top left no-repeat;
+	background-size: 100% 100%;
 	height: 640px;
 	padding: 32px 50px 0;
 	margin: 0 auto;
-	width: 1100px;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
 }
 #logo {
 	display: inline-block;
@@ -37,7 +39,7 @@ a#signin {
 	color: #fff;
 	display: inline-block;
 	float: right;
-	font-family: 'Proxima Nova Light', Helvetica, Arial, sans-serif;
+	font-weight: lighter;
 	height: 41px;
 	line-height: 41px;
 	text-align: center;
@@ -45,7 +47,7 @@ a#signin {
 	width: 136px;
 }
 #cta {
-	background: #000;
+	background: rgba(0, 0, 0, 0.85);
 	margin: 130px auto 0;
 	opacity:0.85;
 	padding: 50px 30px 50px 40px;
@@ -53,7 +55,6 @@ a#signin {
 }
 #cta h2 {
 	color: #fff;
-	font-family: 'Proxima Nova Semibold', Helvetica, Arial, sans-serif;
 	font-size: 40px;
 	font-weight: bold;
 	line-height: 40px;
@@ -62,7 +63,7 @@ a#newtrial {
 	background: #419af9;
 	color: #fff;
 	display: block;
-	font-family: 'Proxima Nova Light', Helvetica, Arial, sans-serif;
+	font-weight: lighter;
 	height: 40px;
 	line-height: 40px;
 	margin: 30px auto 0;
@@ -75,7 +76,7 @@ a#newtrial {
 	border-bottom: #000 60px solid;
 	margin: 0 auto;
 	padding: 45px 65px 75px;
-	width: 1070px;
+	width: 100%;
 }
 #new-releases h2 {
 	font-weight: normal;
@@ -94,4 +95,5 @@ a#newtrial {
 	height: 270px;
 	width: 182px;
 }
-.posters:last-child { margin-right: 0; ]
+.posters:last-child { margin-right: 0; }
+.clear { clear: both; }
