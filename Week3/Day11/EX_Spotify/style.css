@@ -10,19 +10,21 @@ header {
 #logo {
 	display: inline-block;
 	float: left;
-	height: 69px;
-	width: 230px;
+	height: 60px;
 }
 nav {
 	display: inline-block;
 	float: right;
-	/*height: px;
-	width: px;*/
+	text-align: right;
 }
-nav ul { list-style: none; }
+nav ul {
+	list-style: none;
+	margin: 0;
+}
 nav ul li {
 	display: inline-block;
-	line-height: 69px;
+	font-size: 16px;
+	line-height: 60px;
 	list-style: none;
 	padding: 0 20px;
 }
@@ -34,13 +36,11 @@ nav ul li a {
 }
 #banner {
 	background: #000 url(images/Landing.jpg) top left no-repeat;
-	/*background-size: 1400px 840px;*/
 	background-size: cover;
 	color: #fff;
 	display: block;
 	padding: 350px 0;
 	text-align: center;
-	width: 100%;
 }
 #banner h2 {
 	font-size: 60px;
@@ -58,16 +58,16 @@ nav ul li a {
 #features {
 	background: #fff;
 	margin: 0 auto;
-	padding: 55px 0;
-	width: 1200px;
+	padding: 55px 0 0;
 }
+#features div { padding: 0 10%; }
 #features h2 {
 	border-bottom: #1ab16a 3px solid;
 	font-weight: normal;
 	margin: 0 auto 60px;
 	padding-bottom: 12px;
 	text-align: center;
-	width: 200px;
+	width: 250px;
 }
 #features h3 {
 	color: #0abb7d;
@@ -79,33 +79,45 @@ nav ul li a {
 	line-height: 24px;
 	margin: 0 auto;
 	text-align: center;
-	width: 200px;
 }
 #songs { background: url(images/Music-icon.png) top center no-repeat; }
 #hd { background: url(images/High-quality-icon.png) top center no-repeat; }
 #stream { background: url(images/Devices-icon.png) top center no-repeat; }
 #songs, #hd, #stream {
-	display: inline-block;
-	float: left;
-	height: px;
-	padding: 120px 0 0;
-	margin: 0 auto;
+	padding: 120px 8% 60px;
 	text-align: center;
-	width: 33%;
 }
-
 footer {
 	background: #1ab16a;
 	color: #fff;
-	padding: 85px 100px;
+	padding: 80px 15% 40px 18%;
 }
-#instructions {
-	
+#instructions { padding: 0; }
+#instructions h2 {
+	border-bottom: #fff 2px solid;
+	font-size: 2.1em;
+	font-weight: bold;
+	margin: 0 0 30px;
+	padding: 0 0 10px;
+}
+#instructions h3 {
+	font-size: 1.8em;
+	font-weight: bold;
+	margin: 0 0 20px;
+}
+#instructions p {
+	font-size: 1.5em;
+	font-weight: normal;
+	line-height: 1.7em;
+	margin: 0 0 40px;
+	padding-right: 20%;
 }
 #icon {
-	
+	padding: 150px 0 50px;
+	text-align: center;
 }
 #mobile {
-	
+	padding: 40px 0;
+	text-align: right;
 }
 .clear { clear: both; }
