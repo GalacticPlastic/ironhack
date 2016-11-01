@@ -35,7 +35,7 @@ header {
 	color: #fff;
 	height: 815px;
 	margin: 0 auto;
-	width: 1300px;
+	width: 100%;
 }
 #featured-movie h2 {
 	color: #fff;
@@ -76,10 +76,16 @@ a#watch-later {
 	width: 200px;
 }
 #play-button {
-	display: inline-block;
-	float: left;
+	bottom: 0;
+	display: block;
 	height: 188px;
+	left: 0;
+	margin: auto;
+	position: absolute;
 	padding: 210px 0 0 20px;
+	position: absolute;
+	right: 0;
+	top: 0;
 	width: 188px;
 }
 .clear { clear: both; }
