@@ -1,24 +1,5 @@
-function nationality (nation, array) {
-	var counter = 0;
-	array.forEach(function (totalStudents) {
-		if (totalStudents === nation) {
-			counter += 1;
-		}
-	});
-	return counter;
-}
-var countries = [
-	"Puerto Rico", "Puerto Rico",
-	"USA", "USA", "USA", "USA", "USA",
-	"Nicaragua",
-	"France",
-	"Zimbabwe",
-	"Mongolia",
-	"Argentina",
-	"Cuba", "Cuba", "Cuba", "Cuba",
-	"Nigeria",
-	"Haiti"
-];
+var nationality = require("./lib/count-countries.js");
+var countries = [ "Puerto Rico", "Puerto Rico", "USA", "USA", "USA", "USA", "USA", "Nicaragua", "France", "Zimbabwe", "Mongolia", "Argentina", "Cuba", "Cuba", "Cuba", "Cuba", "Nigeria", "Haiti" ];
 console.log("");
 console.log("This Ironhack cohort comes from all over the world, including the following countries:");
 console.log("--------------------------------------------------------------------------------------");
@@ -44,6 +25,7 @@ console.log(nationality("Nicaragua", countries) === 1);
 console.log(nationality("Japan", countries) === 0);
 console.log("");
 
+
 // NOTES: /////////////////////////////////////////
 
 // Console is a built in method. Log is an object.
@@ -55,3 +37,5 @@ console.log("");
 //    Classes -> ClassCase
 
 // No implicit return in JS, unlike Ruby. Must insert "return" keyword.
+
+// In require external script link, must use syntax require("./lib/count-countries.js"); with the ./ to identify a local file (Node-specific).
