@@ -1,32 +1,14 @@
+var Animal = require("./lib/animal.js")
 console.log("");
-for harley = {
-	name: "Harley",
-	breed: "German Shepherd",
-	sound: "Woof?"
 
-	chase: function() {
-		console.log(`${this.name} is chasing cats.`);
-	},
-	bark: function() {
-		console.log(this.sound);
-	}
-}
+var harley = new Animal("Harley", "German Shepherd", "Woof?");
 harley.chase();
 harley.bark();
-console.log("");
-for bear = {
-	name: "Bear",
-	breed: "Border Collie",
-	sound: "Uooooah"
 
-	chase: function() {
-		console.log(`${this.name} is chasing Harley.`);
-	},
-	bark: function() {
-		console.log(this.sound);
-	}
-}
+console.log("");
+
+var bear = new Animal("Bear", "Border Collie", "Uooooah");
 bear.chase();
 bear.bark();
+
 console.log("");
-// "Object Literals." Dirty, dirty, redundant code.
