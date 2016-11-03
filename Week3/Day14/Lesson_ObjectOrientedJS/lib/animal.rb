@@ -5,7 +5,7 @@ class Animal
 		@sound = sound
 	end
 	def chase
-		puts "#{@name} is chasing cats."
+		puts "#{@name} is chasing the cat."
 	end
 	def bark
 		puts @sound
