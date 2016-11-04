@@ -1,21 +1,41 @@
+/* --- Globals --- */
 * { margin: 0; padding: 0; }
 body, html { height: 100%; }
 ul, li { list-style: none; }
-nav ul li, #stats ul li, form#search, #search input, a#login, a#follow, ul#tweet-contents li { display: inline-block; }
-a { color: #0000FF; }
+a#logo, nav ul li, #stats ul li, form#search, #search input, a#login, a#follow, ul#tweet-contents li, a.avatar, .post { display: inline-block; }
+a, a:hover { color: #1b95e0; }
+.clear { clear: both; } /* Cuz, lazy. Don't judge my life. */
+/* --- Layout --- */
 body { background: #f5f8fa; }
 header {
 	background: #fff;
 /*	border-bottom: 1px solid;
 */	box-shadow: 0 1px 1px #aaa;
+	padding: 8px 0 0;
+}
+#header-right, .follow-btn { padding-right: 0; }
+nav li {
+	font-size: 11px;
+	line-height: 30px;
+	margin-right: 20px;
+}
+nav a {
+	color: #8899a6;
+	font-size: 12px;
+	padding-left: 40px;
 }
 header section, .follow-btn { text-align: right; }
+#search input {
+	border-radius: 15px;
+	padding: 0 20px;
+}
+#login {
+	color: #8899a6;
+	font-size: 0.85em;
+	margin-left: 20px;
+}
 #banner { 
-	background-attachment: fixed;
-	background-image: url(https://pbs.twimg.com/profile_banners/15889484/1432514791/1500x500);
-	background-position: 50% 50%;
-  	background-repeat: no-repeat;
-	background-size: cover;
+	background: url(https://pbs.twimg.com/profile_banners/15889484/1432514791/1500x500) fixed top left no-repeat;
 	height: 360px;
 }
 /*:hover {
@@ -52,15 +72,15 @@ header section, .follow-btn { text-align: right; }
 	text-transform: uppercase;
 }
 .stat-value {
-	color: #0000FF;
+	color: #1b95e0;
 	font-size: 18px;
 }
 #stats ul li a.active .stat-value { color: #000; }
 #stats ul li a.active, #stats ul li a:hover {
-	border-bottom: #0000FF 5px solid;
+	border-bottom: #1b95e0 5px solid;
 	padding-bottom: 5px;
 }
-#stats ul li a:hover { color: #0000FF; }
+#stats ul li a:hover { color: #1b95e0; }
 #follow {
 	background-color: #e1e8ed;
 	background-image: linear-gradient(#fff, #eee);
@@ -81,6 +101,12 @@ header section, .follow-btn { text-align: right; }
 	color: #292f33;
 	text-decoration: none;
 }
+#follow .icon {
+	display: inline-block;
+	height: 15px;
+	padding-right: 5px;
+}
+/* --- Left Col --- */
 #profile { color: #292f33; }
 #profile h1 {
 	font-size: 22px;
@@ -95,44 +121,99 @@ header section, .follow-btn { text-align: right; }
 	line-height: 18px;
 	margin: 0 0 10px;
 }
+#details li {
+	line-height: 26px;
+	padding-left: 30px;
+}
+#located { /*background: url(); <-- Icon Hack */ }
+#joined { /*background: url(); <-- Icon Hack */ }
+#photos {
+	/*background: url(); <-- Icon Hack */
+	margin-top: 20px;
+}
 ul#media li {
+	border-radius: 5px;
 	display: inline-block;
 	float: left;
-	height: 70px;
+	height: 76px;
+	margin: 0 5px 5px 0;
 	overflow: hidden;
-	width: 70px;
+	width: 76px;
 }
 ul#media a { display: block; }
 ul#media img {
-	height: 70px;
-	width: 70px;
+	height: 76px;
+	width: 76px;
 }
+/* --- Center Feed --- */
 ul#tweet-contents {
 	background: #fff;
 	border-left: 1px solid #e1e8ed;
 	border-right: 1px solid #e1e8ed;
 	border-top: 1px solid #e1e8ed;
 	border-radius: 10px 10px 0 0;
+	font-size: 18px;
 	margin: 10px 0 0;
-	padding: 10px 15px;
+	padding: 12px 15px 10px;
 }
+ul#tweet-contents li { margin-right: 25px; }
 #feed {
 	background: #fff;
-	border: 1px solid #e1e8ed;
+	border-bottom: 1px solid #e1e8ed;
+	border-left: 1px solid #e1e8ed;
+	border-right: 1px solid #e1e8ed;
 	border-radius: 0 0 10px 10px;
-	padding: 15px 0;
+	margin-bottom: 20px;
 }
 .tweet {
-	border-bottom: 1px solid #e1e8ed;
+	border-top: 1px solid #e1e8ed;
 	margin-bottom: 15px;
-	padding: 0 15px;
+	padding: 15px;
 }
+a.retweet {
+	background: url(../img/icon_retweet.png) 14px 0 no-repeat;
+	background-size: contain; /* <-- Icon Hack. Fuck that icon font noise. */
+	color: #8899a6;
+	display: block;
+	font-size: 0.9em;
+	line-height: 15px;
+	margin: 0 0 5px 20px;
+	padding-left: 38px;
+}
+.avatar {
+	float: left;
+	height: 48px;
+	margin: 2px 10px 0 0;
+	overflow: hidden;
+	width: 48px;
+}
+.avatar img {
+	border-radius: 5px;
+	height: 48px;
+	width: 48px;
+}
+.retweeted { margin: 0; }
+.retweeted a { color: #8899a6; }
+.post {
+	float: left;
+	width: 90%;
+}
+.post img {
+	border-radius: 10px;
+	margin-top: 10px;
+	max-width: 100%;
+}
+.icons {
+	clear: both;
+}
+/* --- Right Column --- */
+aside.col-sm-2 { padding: 0; }
 #signup-cta {
 	background: #e1e8ed;
 	border: 1px solid #e1e8ed;
 	border-radius: 10px;
 	color: #8899a6;
-	margin-top: 10px;
+	margin: 10px 0;
 	padding: 15px;
 }
 #signup-cta h2 {
@@ -152,4 +233,26 @@ ul#tweet-contents {
 	text-align: center;
 	padding: 10px 15px;
 }
+#recommended {
+	background: #fff;
+	border: 1px solid #e1e8ed;
+	border-radius: 10px;
+	color: #8899a6;
+	margin: 10px 0;
+	padding: 15px;
+}
+#recommended h3 {
+	font-size: 16px;
+	font-weight: normal;
+	display: inline-block;
+	margin: 0 0 15px;
+}
+#recommended li { margin-bottom: 5px; }
+ul#footer li {
+	display: inline;
+	font-size: 12px;
+	padding-right: 10px;
+}
+ul#footer li, ul#footer li a { color: #ccd6dd; }
+ul#footer li a:hover { color: #1b95e0; }
 /* Twitter Blue = #1da1f2 */
