@@ -1,0 +1,155 @@
+* { margin: 0; padding: 0; }
+body, html { height: 100%; }
+ul, li { list-style: none; }
+nav ul li, #stats ul li, form#search, #search input, a#login, a#follow, ul#tweet-contents li { display: inline-block; }
+a { color: #0000FF; }
+body { background: #f5f8fa; }
+header {
+	background: #fff;
+/*	border-bottom: 1px solid;
+*/	box-shadow: 0 1px 1px #aaa;
+}
+header section, .follow-btn { text-align: right; }
+#banner { 
+	background-attachment: fixed;
+	background-image: url(https://pbs.twimg.com/profile_banners/15889484/1432514791/1500x500);
+	background-position: 50% 50%;
+  	background-repeat: no-repeat;
+	background-size: cover;
+	height: 360px;
+}
+/*:hover {
+	border-bottom: #1da1f2 5px solid;
+	color: #1da1f2;						
+}*/
+#profile-pic {
+	border: #fff 5px solid;
+	border-radius: 12px;
+	box-shadow: 0 1px 1px #ddd;
+	height: 200px;
+	margin-top: 250px;
+	overflow: hidden;
+	position: relative;
+	width: 200px;
+}
+#profile-pic a, #profile-pic img, #stats ul li a { display: block; }
+#stats {
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+}
+#stats ul { margin-bottom: 0; }
+#stats ul li a {
+	/*height: 35px;*/
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	/*width: 80px;*/
+}
+.stat-label {
+	color: #666;
+	display: block;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+.stat-value {
+	color: #0000FF;
+	font-size: 18px;
+}
+#stats ul li a.active .stat-value { color: #000; }
+#stats ul li a.active, #stats ul li a:hover {
+	border-bottom: #0000FF 5px solid;
+	padding-bottom: 5px;
+}
+#stats ul li a:hover { color: #0000FF; }
+#follow {
+	background-color: #e1e8ed;
+	background-image: linear-gradient(#fff, #eee);
+	border: 1px solid #e1e8ed;
+	border-radius: 4px;
+	color: #292f33;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 10px;
+	padding: 10px 15px;
+	text-align: center;
+}
+#follow:hover {
+	background-color: #e1e8ed;
+	background-image: linear-gradient(#fff, #ddd);
+	border-color: #e1e8ed;
+	color: #292f33;
+	text-decoration: none;
+}
+#profile { color: #292f33; }
+#profile h1 {
+	font-size: 22px;
+	margin-bottom: 0;
+	padding: 20px 0 0;
+}
+#profile h1 a { color: #000; }
+#profile h2 {
+	color: #aaa;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 18px;
+	margin: 0 0 10px;
+}
+ul#media li {
+	display: inline-block;
+	float: left;
+	height: 70px;
+	overflow: hidden;
+	width: 70px;
+}
+ul#media a { display: block; }
+ul#media img {
+	height: 70px;
+	width: 70px;
+}
+ul#tweet-contents {
+	background: #fff;
+	border-left: 1px solid #e1e8ed;
+	border-right: 1px solid #e1e8ed;
+	border-top: 1px solid #e1e8ed;
+	border-radius: 10px 10px 0 0;
+	margin: 10px 0 0;
+	padding: 10px 15px;
+}
+#feed {
+	background: #fff;
+	border: 1px solid #e1e8ed;
+	border-radius: 0 0 10px 10px;
+	padding: 15px 0;
+}
+.tweet {
+	border-bottom: 1px solid #e1e8ed;
+	margin-bottom: 15px;
+	padding: 0 15px;
+}
+#signup-cta {
+	background: #e1e8ed;
+	border: 1px solid #e1e8ed;
+	border-radius: 10px;
+	color: #8899a6;
+	margin-top: 10px;
+	padding: 15px;
+}
+#signup-cta h2 {
+	color: #66757f;
+	font-size: 22px;
+	font-weight: normal;
+	line-height: 26px;
+	margin: 0 0 5px;
+	padding: 0;
+}
+#signup-cta a {
+	background: #1da1f2;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	font-weight: normal;
+	text-align: center;
+	padding: 10px 15px;
+}
+/* Twitter Blue = #1da1f2 */
