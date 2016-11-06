@@ -13,24 +13,38 @@ header {
 */	box-shadow: 0 1px 1px #aaa;
 	padding: 8px 0 0;
 }
-#header-right, .follow-btn { padding-right: 0; }
+#header-right { padding: 3px 0 0;}
 nav li {
 	font-size: 11px;
-	line-height: 30px;
+	line-height: 20px;
 	margin-right: 20px;
+	padding: 10px 0 3px;
 }
 nav a {
-	color: #8899a6;
-	font-size: 12px;
-	padding-left: 40px;
+	color: #66757f;
+	font-size: 13px;
 }
 header section, .follow-btn { text-align: right; }
+#logo {
+	background: url(../img/icon_twitter.png) center left no-repeat;
+	background-size: contain;
+	padding-left: 30px;
+}
+#moments {
+	background: url(../img/icon_moments.png) center left no-repeat;
+	background-size: contain;
+	padding: 3px 18px;
+}
 #search input {
+	background-color: #f5f8fa;
+	border: 1px solid #e1e8ed;
 	border-radius: 15px;
-	padding: 0 20px;
+	color: #66757f;
+	font-size: 12px;
+	padding: 8px 40px 5px 10px;
 }
 #login {
-	color: #8899a6;
+	color: #66757f;
 	font-size: 0.85em;
 	margin-left: 20px;
 }
@@ -81,6 +95,7 @@ header section, .follow-btn { text-align: right; }
 	padding-bottom: 5px;
 }
 #stats ul li a:hover { color: #1b95e0; }
+.follow-btn { padding-right: 0; }
 #follow {
 	background-color: #e1e8ed;
 	background-image: linear-gradient(#fff, #eee);
@@ -122,13 +137,21 @@ header section, .follow-btn { text-align: right; }
 	margin: 0 0 10px;
 }
 #details li {
-	line-height: 26px;
-	padding-left: 30px;
+	line-height: 16px;
+	margin-bottom: 10px;
+	padding-left: 26px;
 }
-#located { /*background: url(); <-- Icon Hack */ }
-#joined { /*background: url(); <-- Icon Hack */ }
+#located {
+	background: url(../img/icon_location.png) center left no-repeat;
+	background-size: contain;
+}
+#joined {
+	background: url(../img/icon_joined.png) center left no-repeat;
+	background-size: contain;
+}
 #photos {
-	/*background: url(); <-- Icon Hack */
+	background: url(../img/icon_media.png) center left no-repeat;
+	background-size: contain;
 	margin-top: 20px;
 }
 ul#media li {
@@ -233,7 +256,7 @@ aside.col-sm-2 { padding: 0; }
 	text-align: center;
 	padding: 10px 15px;
 }
-#recommended {
+#recommended, #trends {
 	background: #fff;
 	border: 1px solid #e1e8ed;
 	border-radius: 10px;
@@ -241,13 +264,17 @@ aside.col-sm-2 { padding: 0; }
 	margin: 10px 0;
 	padding: 15px;
 }
-#recommended h3 {
+#recommended h3, #trends h3 {
 	font-size: 16px;
 	font-weight: normal;
 	display: inline-block;
 	margin: 0 0 15px;
 }
-#recommended li { margin-bottom: 5px; }
+#recommended li, #trends li { margin-bottom: 8px; }
+#trends a {
+	display: block;
+	font-weight: bold;
+}
 ul#footer li {
 	display: inline;
 	font-size: 12px;
