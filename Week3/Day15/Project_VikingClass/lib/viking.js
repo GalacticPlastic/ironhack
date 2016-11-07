@@ -8,7 +8,8 @@ class Viking {
 	// What can a viking do?
 	// Attack anyone for the lulz. Valhalla!!
 	attack (enemy) {
-		return enemy.health - this.strength;
+		attackDamage = enemy.health - this.strength;
+		console.log(`${this.name} has dealt ${enemy.name} ${attackDamage} damage. ${enemy.name} has ${enemy.health} health remaining.`)
 	}
 }
 module.exports = Viking;
