@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    	<title>Timetracking</title>
+    	<meta charset="utf-8">
+        <title>Time Tracking Rails App</title>
     	<%= csrf_meta_tags %>
-    	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
 	<body>
-    	<main>
-    		<!-- This is a Test -->
+    	<header>
+            <h1><a href="/">Time Tracking Rails App</a></h1>
+            <%= render "inc/navigation" %>
+            <!-- Knows to look for inc/_navigation.html.erb file -->
+        </header>
+        <main>
     		<%= yield %>
     	</main>
+        <footer>
+            <small>Made with &hearts; at Ironhack!</small>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </footer>
 	</body>
 </html>

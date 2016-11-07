@@ -1,0 +1,14 @@
+<h2>Calculator</h2>
+<form action="/calculator" method="post">
+	<fieldset>
+		<label for="number1">First Input:</label>
+		<input type="number" name="number1">
+	</fieldset>
+	<fieldset>
+		<label for="number2">Second Input:</label>
+		<input type="number" name="number2">
+	</fieldset>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<!-- <input type="button" name="submit" value="submit"> -->
+	<button>Add</button>
+</form>

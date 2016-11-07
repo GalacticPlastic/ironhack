@@ -12,16 +12,13 @@
  *= require_tree .
  *= require_self
  */
+
+ /* ----- Globals ----- */
 * { margin: 0; padding: 0; }
 body {
-	background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/sayagata-400px.png) top left repeat;
-	padding: 20px;
+	background: url(http://img.hrhwalls.com/images/mecuwqaw5xx.jpg) top left no-repeat;
+	font-family: Helvetica, Arial, sans-serif;
 	text-align: center;
 }
-main {
-	background: #fff;
-	margin: 20px auto;
-	padding: 20px;
-	width: 900px;
-}
+a { text-decoration: none; }
 p { padding: 5px 0 15px; }

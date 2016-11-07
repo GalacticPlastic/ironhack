@@ -44,6 +44,50 @@ Views/layouts/application.html.erb is the page template file.
 
 Generate creates files, destroy removes them.
 
-
 Naming Conventions:
 Action name = Template File name
+Partial HTML snippet file names should begin with an underscore.
+
+
+Asset Tag Helpers are GREAT!...
+```
+<%= image_tag "kaiser_smile.gif", alt:"german shepherd smiling", title:"What a Cute Puppy!" %>
+````
+
+In place of:
+```
+<img src="assets/images/kaiser_smile.gif" alt="german shepherd smiling" title="What a Cute Puppy!">
+```
+
+...Except for the Auto-Generated Fingerprint Caching URL Bull@#$%.
+
+
+# Params
+
+## Through a Route
+Parameters are hashes used to date from the client's browser to the application server. Params through a route example:
+```ruby
+get '/user/:name' do
+	name = params[:name]
+	"Hello, #{name}!"
+end
+```
+
+## Through a Form
+```ruby
+<form action="/user" method="POST">
+	<input type="text" name="name">
+</form>
+post '/user' do
+	name = params[:name]
+	"Hello, #{name}!"
+end
+```
+## Through a String Query
+```ruby
+# http://localhost
+get '/user/:name' do
+	name = params[:name]
+	"Hello, #{name}!"
+end
+```

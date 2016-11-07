@@ -1,0 +1,19 @@
+// Place all the styles related to the calculator controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+fieldset {
+	border: none;
+	margin: 10px auto;
+	width: 90%;
+}
+fieldset:after { clear: both; }
+label {
+	float: left;
+	line-height: 26px;
+	text-align: right;
+	width: 24%;
+}
+input {
+	padding: 5px;
+	width: 70%;
+}
