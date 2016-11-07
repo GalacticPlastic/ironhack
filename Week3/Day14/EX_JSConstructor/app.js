@@ -1,5 +1,5 @@
 "use strict";
-var Car = require("./lib/car.js")
+var Car = require("./lib/car.js");
 console.log("");
 
 var mustang = new Car("s550", "Vrooom");
