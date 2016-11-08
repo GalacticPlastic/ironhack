@@ -16,11 +16,15 @@ header nav {
 	padding: 15px;
 }
 nav ul li {
+	color: #ddd;
 	display: inline-block;
 	list-style: none;
 	padding-right: 20px;
 }
-nav a { color: #fff; }
+nav a {
+	color: #fff;
+	font-weight: bold;
+}
 main {
 	background: #fff;
 	border-radius: 0 0 15px 15px;
@@ -39,3 +43,10 @@ footer small {
 	line-height: 26px;
 }
 /*footer nav { border-radius: 8px; }*/
+#projects {
+	font-size: 0.85em;
+	line-height: 1.5em;
+	margin-left: 40px;
+	text-align: left;
+}
+#projects td { width: 40%; }

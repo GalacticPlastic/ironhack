@@ -1,0 +1,25 @@
+<h2>Projects Home</h2>
+<br>
+<ol id="projects">
+	<% @projects.each do |project| %>
+		<li>
+			<%= project.name %>
+			<% if project.descript.present? %>
+				- <%= project.descript %>
+			<% end %>
+		</li>
+	<% end %>
+</ol>
+
+<!-- .where.not(descript: nil) -->
+
+<!-- <table id="projects">
+	<tbody>
+		< % @projects.each do |project| %>
+			<tr>
+				<td>< %= project.name %></td>
+				<td>< %= project.descript %></td>
+			</tr>
+		< % end %>
+	</tbody>
+</table> -->

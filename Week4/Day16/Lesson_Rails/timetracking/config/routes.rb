@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "/say_name/:name", to: "site#say_name"
   get "/add_form", to: "calculator#add_form"
   post "/calculator", to: "calculator#process_addition"
+  get "/projects", to: "projects#index"
 end
