@@ -18,7 +18,8 @@ class TextInspectionsController < ApplicationController
 		@frequency = unsorted.sort_by { |word, count| -count }[0..9]
 		render "results"
 	end
-	def lipsum
-
+	def generator
+		
+		render "lipsum"
 	end
 end
