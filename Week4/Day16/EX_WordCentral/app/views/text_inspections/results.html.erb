@@ -1,12 +1,19 @@
 <h1>Word Results</h1>
-<p>Word Count: <strong><%= @word_count %></strong></p>
-<p>You typed:</p>
+<p>Word Count: <strong><%= @word_count %></strong>.</p>
+<p>Submitted Text:</p>
 <blockquote><%= @text %></blockquote>
-<br>
-<p>Read Time: <strong><%= @read_time %></strong>.
+<p>Average Read Time: <strong><%= @read_time %></strong> seconds.
 <br>(275 Average WPM)</p>
-<br>
-<p>10 Most Frequently Used Words:
-<br><strong><%= @frequency %></strong>.</p>
+<h3>10 Most Frequently Used Words:</h3>
+<% @frequency.each do |word_list| %>
+<table>
+	<tbody>
+		<tr>
+			<td width="200"><%= word_list[0] %></td>	<!-- Word -->
+			<td><%= word_list[1] %></td>	<!-- Count -->
+		</tr>
+	</tbody>
+</table>
+<% end %>
 <hr>
 <p><a href="/">Go Back</a></p>
