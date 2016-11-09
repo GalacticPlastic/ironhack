@@ -19,4 +19,13 @@ class ProjectsController < ApplicationController
 		@my_project.save
 		redirect_to project_prath(@my_project)
 	end
+	# def edit
+	# 	@my_project = Project.edit()
+	# end
+	# def update
+	# 	@my_project = Project.update()
+	# end
+	# def destroy
+	# 	@my_project = Project.destroy()
+	# end
 end

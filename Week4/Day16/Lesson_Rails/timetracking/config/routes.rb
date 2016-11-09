@@ -9,7 +9,14 @@ Rails.application.routes.draw do
   get "/projects/new", to: "projects#new"
   get "/projects/:id", to: "projects#show", as: "project"
   post "/projects", to: "projects#create"
+
+  # get "/projects/edit", to: "projects#edit"
+  # get "/projects/update", to: "projects#update"
+  # get "/projects/destroy", to: "projects#destroy"
   
+
+  # NOTES:
+  # ----------------------------
   # /New MUST be **ABOVE** /:ID!
   # Link to create post is /projects, not /projects/create (naming convention).
   # The reasoning behind the convention is that when you create something new, you want to add it to the list (index).
