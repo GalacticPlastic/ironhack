@@ -1,19 +1,19 @@
 class TimeEntriesController < ApplicationController
 	def index
-		@my_project = Project.find(params[:id])
+		@my_project = Project.find(params[:project_id])
 		@my_entries = @my_project.time_entries
 		render 'index'
 	end
-	# def new
-	# 	@my_entries = Project.new
-	# 	render 'new'
-	# end
-	# def create
-	# 	@my_entries = Project.new(
-	# 		:name => params[:][:],
-	# 		:descript => params[:][:]
-	# 	)
-	# 	@my_entries.save
-	# 	redirect_to project_path(@my_entries)
-	# end
+	def new
+		# @new_entry = @my_entries.new
+		render 'new'
+	end
+	def create
+		# @new_entry = @my_entries.new(
+		# 	:name => params[:][:],
+		# 	:descript => params[:][:]
+		# )
+		# @new_entry.save
+		# redirect_to project_path(@my_entries)
+	end
 end
