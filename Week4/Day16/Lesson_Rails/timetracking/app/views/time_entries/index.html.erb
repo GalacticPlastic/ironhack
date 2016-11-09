@@ -1,0 +1,14 @@
+<h2><%= @my_project.name %></h2>
+<table id="task">
+	<tbody>
+		<% @my_entries.each do |entry| %>
+		<tr>
+			<td width="30%"><%= entry.hours %> h <%= entry.minutes %> m
+			<br><%= entry.date %></td>
+			<td><%= entry.comment %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<div id="cta"><%= link_to "Back to Task", project_path %></div>

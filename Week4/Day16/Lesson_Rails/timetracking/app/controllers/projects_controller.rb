@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
 			:descript => params[:project][:descript]
 		)
 		@my_project.save
-		redirect_to project_prath(@my_project)
+		redirect_to project_path(@my_project)
 	end
 	# def edit
 	# 	@my_project = Project.edit()

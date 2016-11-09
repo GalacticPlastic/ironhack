@@ -10,11 +10,8 @@ Rails.application.routes.draw do
   get "/projects/:id", to: "projects#show", as: "project"
   post "/projects", to: "projects#create"
 
-  # get "/projects/edit", to: "projects#edit"
-  # get "/projects/update", to: "projects#update"
-  # get "/projects/destroy", to: "projects#destroy"
+  get "/projects/:id/time_entries", to: "time_entries#index", as: "project_time_entries"
   
-
   # NOTES:
   # ----------------------------
   # /New MUST be **ABOVE** /:ID!
