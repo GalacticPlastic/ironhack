@@ -1,25 +1,23 @@
 <h2>Projects Home</h2>
 <br>
-<ol id="projects">
-	<% @projects.each do |project| %>
-		<li>
-			<%= project.name %>
-			<% if project.descript.present? %>
-				- <%= project.descript %>
-			<% end %>
-		</li>
-	<% end %>
-</ol>
-
-<!-- .where.not(descript: nil) -->
-
-<!-- <table id="projects">
+<table id="projects">
 	<tbody>
-		< % @projects.each do |project| %>
+		<% @projects.each do |project| %>
 			<tr>
-				<td>< %= project.name %></td>
-				<td>< %= project.descript %></td>
+				<td><%= link_to project.name, project_path(project.id) %></td>
+				<td>
+					<% if project.descript.present? %>
+						<%= project.descript %>
+					<%else %>
+						&nbsp;
+					<% end %>
+				</td>
 			</tr>
-		< % end %>
+		<% end %>
 	</tbody>
-</table> -->
+</table>
+
+<div id="cta"><%= link_to "Add New Task", projects_new_path %></div>
+
+
+<!-- <div id="cta"><a  href="/projects/new">Add New Task</a> -->

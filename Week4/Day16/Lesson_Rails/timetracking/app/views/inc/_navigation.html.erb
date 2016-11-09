@@ -4,6 +4,10 @@
 		<li><%= link_to_unless_current "About", about_path %></li>
 		<li><%= link_to_unless_current "Contact", contact_path %></li>
 		<li><%= link_to_unless_current "Calculator", add_form_path %></li>
-		<li><%= link_to_unless_current "Projects", projects_path %></li>
+		<li><%= link_to_unless_current "Projects", projects_path %>
+			<!-- <ul class="dropdown">
+				<li>< %= link_to_unless_current "Add Task", "/projects/new" %>
+			</ul> -->
+		</li>
 	</ul>
 </nav>

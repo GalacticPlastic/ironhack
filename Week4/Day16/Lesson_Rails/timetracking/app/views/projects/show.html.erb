@@ -1,0 +1,22 @@
+<h2>Task: <strong><%= @my_project.name %></strong></h2>
+<p><em><%= @my_project.descript %></em></p>
+
+<h3>Project Details</h3>
+<table id="task">
+	<tbody>
+		<tr>
+			<td width="30%">ID:</td>
+			<td><strong><%= @my_project.id %></strong></td>
+		</tr>
+		<tr>
+			<td>Created:</td>
+			<td><strong><%= @my_project.created_at %></strong></td>
+		</tr>
+		<tr>
+			<td>Updated:</td>
+			<td><strong><%= @my_project.updated_at %></strong></td>
+		</tr>
+	</tbody>
+</table>
+
+<small><%= link_to "View All Tasks", projects_path %><%= link_to "Add New Task", projects_new_path %></small>

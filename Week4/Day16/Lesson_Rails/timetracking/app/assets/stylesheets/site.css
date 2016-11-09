@@ -5,6 +5,7 @@ h1 {
 	margin: 20px 0;
 }
 h1 a { color: #444; }
+h2 { font-weight: normal; }
 header, main, footer {
 	width: 90%;
 }
@@ -28,10 +29,47 @@ nav a {
 main {
 	background: #fff;
 	border-radius: 0 0 15px 15px;
-	height: 65vh;
+	min-height: 65vh;
 	margin: 0 auto 20px;
-	padding: 20px 0;
+	padding: 20px 0 30px;
 }
+main:after { clear: both; }
+/* --- Projects --- */
+#projects td:first-of-type { width: 35%; }
+#projects, #task {
+	border: #ddd 1px solid;
+	font-size: 0.85em;
+	font-weight: normal;
+	margin: 10px auto;
+	text-align: left;
+	width: 90%;
+}
+#projects td, #task td {
+	border: #ddd 1px solid;
+	padding: 10px;
+}
+#cta a {
+	background: red;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	margin: 20px auto 0;
+	padding: 10px 20px;
+	text-shadow: #444 1px 1px 1px;
+	width: 150px;
+}
+#cta:after { clear: both; }
+small a {
+	background: #eaeaea;
+	border: #ccc 1px solid;
+	border-radius: 3px;
+	color: #444;
+	display: inline-block;
+	margin: 10px 5px;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+/* --- Footer --- */
 footer {
 	background: #323232;
 	border-radius: 8px;
@@ -43,10 +81,3 @@ footer small {
 	line-height: 26px;
 }
 /*footer nav { border-radius: 8px; }*/
-#projects {
-	font-size: 0.85em;
-	line-height: 1.5em;
-	margin-left: 40px;
-	text-align: left;
-}
-#projects td { width: 40%; }
