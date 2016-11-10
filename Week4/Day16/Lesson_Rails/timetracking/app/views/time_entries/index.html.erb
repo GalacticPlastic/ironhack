@@ -6,9 +6,11 @@
 			<td width="30%"><%= entry.hours %> h <%= entry.minutes %> m
 			<br><%= entry.date %></td>
 			<td><%= entry.comment %></td>
+			<td><%= link_to "Edit", edit_project_time_entry_path(@my_project, entry) %></td>
+			<!-- <td>< %= link_to "Edit", "/projects/#{@my_project.id}/time_entries/#{one_entry.id}/edit" %></td> -->
 		</tr>
 		<% end %>
 	</tbody>
 </table>
 
-<div id="cta"><%= link_to "Back to Task", project_path %></div>
+<small><%= link_to "Add New Time Entry", new_project_time_entry_path(@my_project) %><%= link_to "Back to Task", project_path(@my_project) %></small>

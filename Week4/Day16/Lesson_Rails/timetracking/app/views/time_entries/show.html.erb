@@ -1,0 +1,37 @@
+<h2>Time Entry: <strong><%= @my_entry.name %></strong></h2>
+<p>For Task: <strong><%= @my_project.name %></strong></p>
+
+<h3>Time Entry Details</h3>
+<table id="task">
+	<tbody>
+		<tr>
+			<td width="30%">ID:</td>
+			<td><strong><%= @my_entry.id %></strong></td>
+		</tr>
+		<tr>
+			<td>Date:</td>
+			<td><strong><%= @my_entry.date %></strong></td>
+		</tr>
+		<tr>
+			<td>Hours:</td>
+			<td><strong><%= @my_entry.hours %></strong></td>
+		</tr>
+		<tr>
+			<td>Minutes:</td>
+			<td><strong><%= @my_entry.minutes %></strong></td>
+		</tr>
+		<tr>
+			<td>Comment:</td>
+			<td><strong><%= @my_entry.comment %></strong></td>
+		</tr>
+		<tr>
+			<td>Created:</td>
+			<td><strong><%= @my_entry.created_at %></strong></td>
+		</tr>
+		<tr>
+			<td>Updated:</td>
+			<td><strong><%= @my_entry.updated_at %></strong></td>
+		</tr>
+	</tbody>
+</table>
+<small><%= link_to "Back to Task", project_path(@my_project) %></small>

@@ -26,6 +26,11 @@ nav a {
 	color: #fff;
 	font-weight: bold;
 }
+/* --- Banner --- */
+/*#banner {
+	background: url(../images/);
+}*/
+/* --- Content --- */
 main {
 	background: #fff;
 	border-radius: 0 0 15px 15px;
@@ -33,7 +38,42 @@ main {
 	margin: 0 auto 20px;
 	padding: 20px 0 30px;
 }
-main:after { clear: both; }
+main:after, fieldset:after { clear: both; }
+form {
+	margin: 0 auto;
+	width: 500px;
+}
+fieldset {
+	border: none;
+	margin: 20px 0 10px;
+}
+label {
+	display: inline-block;
+	line-height: 20px;
+	vertical-align: top;
+	width: 80px;
+}
+input[type="text"], textarea { width: 250px; }
+input[type="text"] {
+	float: left;
+	margin-left: 20px;
+}
+textarea {
+	border: #ddd 1px solid;
+	display: inline-block;
+	float: left;
+	height: 80px;
+	margin-left: 20px;
+	padding: 5px;
+}
+small.error {
+	color: red;
+	display: inline-block;
+	padding-right: 15px;
+}
+select { float: left; }
+select:first-of-type { margin-left: 20px; }
+.field_with_errors label { color: red; }
 /* --- Projects --- */
 #projects td:first-of-type { width: 35%; }
 #projects, #task {
@@ -44,6 +84,8 @@ main:after { clear: both; }
 	text-align: left;
 	width: 90%;
 }
+#projects tr:nth-child(even), #task tr:nth-child(even) { background: #DAE4F0; }
+#projects tr:nth-child(odd), #task tr:nth-child(even) { background: #FFF; }
 #projects td, #task td {
 	border: #ddd 1px solid;
 	padding: 10px;
