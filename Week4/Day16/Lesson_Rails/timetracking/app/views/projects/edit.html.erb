@@ -1,14 +1,3 @@
 <h2>Edit Project</h2>
-<%= form_for @my_project do |form| %>
-	<fieldset>
-		<%= form.label :name %>
-		<%= form.text_field :name %>
-	</fieldset>
-	<fieldset>
-		<%= form.label :descript %>
-		<%= form.text_area :descript %>
-	</fieldset>
-	<%= form.button %>
-	<%= link_to 'Cancel', projects_path %>
-<% end %>
+<%= render "form" %>
 <small><%= link_to "Back to Tasks", projects_path %></small>
