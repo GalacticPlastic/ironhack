@@ -1,28 +1,5 @@
 <h2>Edit Time Entry</h2>
 <h3>Task: <strong><%= @my_project.name %></strong></h3>
 <br>
-<% if @my_entry.errors.any? %>
-	<% @my_entry.errors.full_messages.each do |error_msg| %>
-		<small class="error"><strong>Error:</strong> <%= error_msg %>.</small>
-	<% end %>
-<% end %>
-<%= form_for [@my_project, @my_entry] do |f| %> <!--form_tag(search_path, method: "patch")-->
-	<fieldset>
-		<%= f.label :date %>
-		<%= f.date_select :date %>   <!--date_field-->
-	</fieldset>
-	<fieldset>
-		<%= f.label :hours %>
-		<%= f.text_field :hours %>
-	</fieldset>
-		<%= f.label :minutes %>
-		<%= f.text_field :minutes %>
-	</fieldset>
-	<fieldset>
-		<%= f.label :comment %>
-		<%= f.text_area :comment %>
-	</fieldset>
-	<%= f.button %>
-	<%= link_to 'Cancel', project_time_entries_path(@my_project) %>
-<% end %>
+<%= render "form" %>
 <small><%= link_to "Back to Task", project_path(@my_project) %></small>
