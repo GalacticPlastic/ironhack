@@ -12,10 +12,7 @@ class ProjectsController < ApplicationController
 		render :new
 	end
 	def create
-		@my_project = Project.new(
-			:name => params[:project][:name],
-			:descript => params[:project][:descript]
-		)
+		@my_project = Project.new(entry_params)
 		@my_project.save
 		redirect_to project_path(@my_project)
 	end
@@ -25,14 +22,14 @@ class ProjectsController < ApplicationController
 	end
 	def update
 		@my_project = Project.find(params[:id])
-		if @my_project.update(
-				:name => params[:project][:name],
-				:descript => params[:project][:descript]
-			)
+		if @my_project.update(entry_params)
 			redirect_to project_path(@my_project)
 		else
 			render :edit
 		end
+	end
+	def entry_params
+		params.require(:time_entry).permit(:name, :descript)
 	end
 	# def destroy
 	#	@my_project = Project.find(params[:id])

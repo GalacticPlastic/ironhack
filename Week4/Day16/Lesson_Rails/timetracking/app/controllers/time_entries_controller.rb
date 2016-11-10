@@ -11,12 +11,7 @@ class TimeEntriesController < ApplicationController
 	end
 	def create
 		@my_project = Project.find(params[:project_id])
-		@my_entry = @my_project.time_entries.new(
-			:hours => params[:time_entry][:hours],
-			:minutes => params[:time_entry][:minutes],
-			:date => params[:time_entry][:date],
-			:comment => params[:time_entry][:comment]
-		)
+		@my_entry = @my_project.time_entries.new(entry_params)
 		if @my_entry.save
 			redirect_to project_time_entries_path(@my_project)		# "/projects/#{@my_project.id}/time_entries"
 		else
@@ -32,16 +27,18 @@ class TimeEntriesController < ApplicationController
 		@my_project = Project.find(params[:project_id])
 		@my_entry = @my_project.time_entries.find_by(id: params[:id])
 
-		if @my_entry.update(
-				:hours => params[:time_entry][:hours],
-				:minutes => params[:time_entry][:minutes],
-				:date => params[:time_entry][:date],
-				:comment => params[:time_entry][:comment]
-			)
+		if @my_entry.update(entry_params)
 			redirect_to project_time_entries_path(@my_project)
 		else
 			render :edit
 		end 
+	end
+	private
+	def entry_params
+		# returns pre-sanitized hash from form fields:
+		# .require needs the first :entry in brackets to be placed in its parantheses.
+		# .permit needs the second :entry in brackets to be placed in its parantheses.
+		params.require(:time_entry).permit(:hours, :minutes, :date, :comment)
 	end
 	# def destroy
 	# 	@my_project = Project.find(params[:project_id])
