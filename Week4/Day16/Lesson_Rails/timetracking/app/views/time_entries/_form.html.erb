@@ -6,7 +6,7 @@
 <%= form_for [@my_project, @my_entry] do |f| %>
 	<fieldset>
 		<%= f.label :date %>
-		<%= f.date_select :date %>
+		<%= f.date_select :date, { :include_blank => true } %>
 	</fieldset>
 	<fieldset>
 		<%= f.label :hours %>
