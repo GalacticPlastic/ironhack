@@ -12,13 +12,12 @@
 						&nbsp;
 					<% end %>
 				</td>
-				<td><%= link_to "Edit", edit_project_path(project.id) %></td>
+				<td>
+					<%= link_to "Edit", edit_project_path(project.id) %>
+					<br><%= link_to "Delete", project_path(project.id), method: "delete", data: { confirm: "Are you sure?" } %>
+				</td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
-
 <div id="cta"><%= link_to "Add New Task", projects_new_path %></div>
-
-
-<!-- <div id="cta"><a  href="/projects/new">Add New Task</a> -->

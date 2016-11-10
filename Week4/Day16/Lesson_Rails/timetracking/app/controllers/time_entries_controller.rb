@@ -33,16 +33,14 @@ class TimeEntriesController < ApplicationController
 			render :edit
 		end 
 	end
+	def destroy
+		@my_project = Project.find(params[:project_id])
+		@my_entry = @my_project.time_entries.find_by(id: params[:id])
+		@my_entry.destroy()
+		redirect_to project_time_entries_path(@my_project)
+	end
 	private
 	def entry_params
-		# returns pre-sanitized hash from form fields:
-		# .require needs the first :entry in brackets to be placed in its parantheses.
-		# .permit needs the second :entry in brackets to be placed in its parantheses.
 		params.require(:time_entry).permit(:hours, :minutes, :date, :comment)
 	end
-	# def destroy
-	# 	@my_project = Project.find(params[:project_id])
-	# 	@my_entry = @my_project.time_entries.destroy()
-	# 	render :destroy
-	# end
 end

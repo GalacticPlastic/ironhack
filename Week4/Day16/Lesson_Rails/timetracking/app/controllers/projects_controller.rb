@@ -28,12 +28,13 @@ class ProjectsController < ApplicationController
 			render :edit
 		end
 	end
+	def destroy
+		@my_project = Project.find(params[:id])
+		@my_project.destroy()
+		redirect_to project_path(@my_project)
+	end
+	private
 	def entry_params
 		params.require(:project).permit(:name, :descript)
 	end
-	# def destroy
-	#	@my_project = Project.find(params[:id])
-	# 	@my_project = Project.destroy()
-	# 	render :destroy
-	# end
 end
