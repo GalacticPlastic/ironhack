@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
 		end
 	end
 	def entry_params
-		params.require(:time_entry).permit(:name, :descript)
+		params.require(:project).permit(:name, :descript)
 	end
 	# def destroy
 	#	@my_project = Project.find(params[:id])
