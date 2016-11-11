@@ -23,7 +23,7 @@ Intro to Rails
 	# get("/", {to: => "site#home"})
 	# get("/", {to: "site#home"})
 	# get "/", {to: "site#home"}
-	  get "/", to: "**site#home**"
+	  get "/", to: "site#home"
 	  # Get is a method. All 4 syntax variations above do the same thing in Ruby.
 	  # Get as a method receives 2 arguments.
 	  get "/about", to: "site#about"
