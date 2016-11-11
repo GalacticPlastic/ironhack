@@ -2,19 +2,16 @@ Step-by-Step Application Walkthrough
 -----------------
 # Getting Started:
 1. Create the Folder Structure and Database.
-
-```Ruby
-rails new Project_ConcertNetwork
-cd Project_ConcertNetwork
-rails db:create
-```
-
+	```Ruby
+	rails new Project_ConcertNetwork
+	cd Project_ConcertNetwork
+	rails db:create
+	```
 2. Create the Controller and Models.
-⋅⋅⋅Reasoning behind separation of models (and deviation from project instructions):
-
-> A concert tour is a series of concerts by an artist or group of artists in different cities or locations.
-> Often concert tours are named, to differentiate different tours by the same artist and associate a specific tour
-> with a particular album or product (for example: Iron Maiden World Slavery Tour). *(Wikipedia definition)*
+	Reasoning behind separation of models (and deviation from project instructions):
+	> A concert tour is a series of concerts by an artist or group of artists in different cities or locations.
+	> Often concert tours are named, to differentiate different tours by the same artist and associate a specific tour
+	> with a particular album or product (for example: Iron Maiden World Slavery Tour). *(Wikipedia definition)*
 
 ```Ruby
 rails generate controller tour
