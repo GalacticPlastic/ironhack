@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ProjectConcertnetwork</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<title>Ironhack Week 4 Project: Concert Network</title>
+    	<%= csrf_meta_tags %>
+    	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
+	<body>
+		<header class="row">
+			<h1><a href="/">Site Title</a>
+			<%= render "navigation" %>
+		</header>
+		<main class="row">
+			<%= yield %>
+		</main>
+		<footer class="row">
+			<%= render "navigation" %>
+		</footer>
+	</body>
 </html>
