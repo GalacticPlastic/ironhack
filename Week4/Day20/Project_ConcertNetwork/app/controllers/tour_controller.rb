@@ -1,0 +1,2 @@
+class TourController < ApplicationController
+end
