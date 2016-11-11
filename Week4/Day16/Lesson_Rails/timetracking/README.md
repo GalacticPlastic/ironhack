@@ -30,7 +30,7 @@ Intro to Rails
 	end
 	```
 	All pages added here.
-	For details on the DSL available within this file, see [guides.rubyonrails.org/routing.html].
+	For details on the DSL available within this file, see *guides.rubyonrails.org/routing.html*.
 
  4. Create Controller.
 	The controller is a class. Deciding which pages belong to which controller is done thematically (highly subjective).
@@ -51,7 +51,7 @@ Intro to Rails
  5. Add Action / Method.
 
 	Add the following to the SiteController class inside /app/controllers/site_controller.rb:
-	```
+	```Ruby
 	class SiteController < ApplicationController
 		def home
 			render 'home' # Render :name is always the same name as the view template
@@ -88,10 +88,8 @@ In place of:
 
 ...Except for the Auto-Generated Fingerprint Caching URL Bull@#$%.
 
-
 # Params
-
-## Through a Route
+### Through a Route
 Parameters are hashes used to date from the client's browser to the application server. Params through a route example:
 ```ruby
 get '/user/:name' do
@@ -100,7 +98,7 @@ get '/user/:name' do
 end
 ```
 
-## Through a Form
+### Through a Form
 ```ruby
 <form action="/user" method="POST">
 	<input type="text" name="name">
@@ -110,11 +108,46 @@ post '/user' do
 	"Hello, #{name}!"
 end
 ```
-## Through a String Query
+### Through a String Query
 ```ruby
 # http://localhost
 get '/user/:name' do
 	name = params[:name]
 	"Hello, #{name}!"
+end
+```
+#Faith of the 7 CRUD Actions
+CRUD stands for:
+- Create
+- Read
+- Update
+- Destroy
+
+| Name    | Action               | Notes               |
+| ------- |----------------------| --------------------|
+| Index   | Displays list        | (All)               |
+| New     | Shows Form           | (Related to Create) |
+| Create  | Processes Form       | (Related to New)    |		
+| Show 	  | Dsplays Details of 1 | (Individual)        |
+| Edit 	  | Shows form           | (Related to Update) |
+| Update  | Processes form       | (Related to Edit)   |
+| Destroy | Deletes              | (Default 1 Row)     |
+
+**Show**, **Edit**, and **Delete** require the **ID** to function.
+
+## URL Parameters
+Type the following into the terminal to view all helper paths:
+```
+$ rails routes
+```
+
+Helper Paths can be created automatically using Rails naming conventions by replacing the individual routes for each Controller (Object Class) in the config/routes.rb file like so:
+
+```Ruby
+resources :object_class do
+    resources :nested_class													# <= Nested resources/routes
+end
+resources :object_class, only: [:index, :show, :new, :create] do			# <= Only: limits to exactly what you need
+	resources :nested_class, except: [:show]  # <= Nested resources/routes	# <= Except: excludes what you don't
 end
 ```
