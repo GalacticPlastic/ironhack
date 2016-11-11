@@ -49,6 +49,38 @@ Intro to Rails
 	- **/** is the URI.
 
  5. Add Action / Method.
+	In the terminal, add generate the model the way you generated the controller. You can add the attributes in as well:
+	```
+	rails g model Artist name:string venue:string city:string date:datetime price:integer description:text 
+	```
+	*Em:* Don't add **id:integer**, as it is automatically created.
+
+	Now, to generate the schema and get this show on the road, you must update the database with all this new crap.
+	Type the following in the terminal:
+	```
+	rails db:migrate
+	```
+
+	If you get an error because something was invalid in the model you generated (like if you added id:integer like I did), go to /db/migrate/ and open the #######_create_modelname.rb in there.
+
+	Example:
+	```
+	class CreateArtists < ActiveRecord::Migration[5.0]
+	  def change
+	    create_table :artists do |t|
+	      t.string :name
+	      t.string :venue
+	      t.string :city
+	      t.datetime :date
+	      t.integer :price
+	      t.text :description
+	      t.timestamps
+	    end
+	  end
+	end
+	```
+
+	Remove whatever crap you put in there that is preventing you from completing the migrate, save the file, and then type **rails db:migrate** in the terminal again. Voila!
 
 	Add the following to the SiteController class inside /app/controllers/site_controller.rb:
 	```Ruby
