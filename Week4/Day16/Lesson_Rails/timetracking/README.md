@@ -1,11 +1,13 @@
 Intro to Rails
 -----------------
  1. Create a New Rails Application.
+
   	```
   	$ rails new Folder_Name
   	```
 
  2. Create a New Database.
+
    	```
   	$ rails db:create
   	```
@@ -29,15 +31,38 @@ Intro to Rails
 	  get "/about", to: "site#about"
 	end
 	```
+
 	All pages added here.
 	For details on the DSL available within this file, see *guides.rubyonrails.org/routing.html*.
+
+	### URL Parameters
+	Type the following into the terminal to view all helper paths:
+	
+	```
+	$ rails routes
+	```
+
+	Helper Paths can be created automatically using Rails naming conventions by replacing the individual routes for each Controller (Object Class) in the config/routes.rb file like so:
+
+	```Ruby
+	resources :object_class do
+	    resources :nested_class													# <= Nested resources/routes
+	end
+	resources :object_class, only: [:index, :show, :new, :create] do			# <= Only: limits to exactly what you need
+		resources :nested_class, except: [:show]  # <= Nested resources/routes	# <= Except: excludes what you don't
+	end
+	```
 
  4. Create Controller.
 	The controller is a class. Deciding which pages belong to which controller is done thematically (highly subjective).
 
+	**IMPORTANT!** Controller naming convention is **PLURAL**!
+	**IMPORTANT!** Model naming convention is **SINGULAR**!
+
 	```
 	$ rails generate controller site
 	```
+
 	Created two Ruby classes in /app/controllers/ :
 	- application_controller.rb
 	- site_controller.rb
@@ -50,13 +75,16 @@ Intro to Rails
 
  5. Add Action / Method.
 	In the terminal, add generate the model the way you generated the controller. You can add the attributes in as well:
+
 	```
 	rails g model Artist name:string venue:string city:string date:datetime price:integer description:text 
 	```
+
 	*Em:* Don't add **id:integer**, as it is automatically created.
 
 	Now, to generate the schema and get this show on the road, you must update the database with all this new crap.
 	Type the following in the terminal:
+
 	```
 	rails db:migrate
 	```
@@ -64,6 +92,7 @@ Intro to Rails
 	If you get an error because something was invalid in the model you generated (like if you added id:integer like I did), go to /db/migrate/ and open the #######_create_modelname.rb in there.
 
 	Example:
+
 	```
 	class CreateArtists < ActiveRecord::Migration[5.0]
 	  def change
@@ -97,28 +126,30 @@ Intro to Rails
 	Site_controller.rb expects the view file to be located at /app/views/site/.
 	Ex: /app/views/site/home.html.erb
 
-Run the application by typing in "rails server" into the terminal.
-Then visit http://localhost:3000
+	Run the application by typing in "rails server" into the terminal.
+	Then visit http://localhost:3000
 
-Views/layouts/application.html.erb is the page template file.
+	Views/layouts/application.html.erb is the page template file.
 
-Generate creates files, destroy removes them.
+	Generate creates files, destroy removes them.
 
-Naming Conventions:
-Action name = Template File name
-Partial HTML snippet file names should begin with an underscore.
+	Naming Conventions:
+	Action name = Template File name
+	Partial HTML snippet file names should begin with an underscore.
 
-Asset Tag Helpers are GREAT!...
-```
-<%= image_tag "kaiser_smile.gif", alt:"german shepherd smiling", title:"What a Cute Puppy!" %>
-````
+	Asset Tag Helpers are GREAT!...
 
-In place of:
-```
-<img src="assets/images/kaiser_smile.gif" alt="german shepherd smiling" title="What a Cute Puppy!">
-```
+	```
+	<%= image_tag "kaiser_smile.gif", alt:"german shepherd smiling", title:"What a Cute Puppy!" %>
+	````
 
-...Except for the Auto-Generated Fingerprint Caching URL Bull@#$%.
+	In place of:
+
+	```
+	<img src="assets/images/kaiser_smile.gif" alt="german shepherd smiling" title="What a Cute Puppy!">
+	```
+
+	...Except for the Auto-Generated Fingerprint Caching URL Bull@#$%.
 
 # Params
 ### Through a Route
@@ -166,20 +197,3 @@ CRUD stands for:
 | Destroy | Deletes              | (Default 1 Row)     |
 
 **Show**, **Edit**, and **Delete** require the **ID** to function.
-
-## URL Parameters
-Type the following into the terminal to view all helper paths:
-```
-$ rails routes
-```
-
-Helper Paths can be created automatically using Rails naming conventions by replacing the individual routes for each Controller (Object Class) in the config/routes.rb file like so:
-
-```Ruby
-resources :object_class do
-    resources :nested_class													# <= Nested resources/routes
-end
-resources :object_class, only: [:index, :show, :new, :create] do			# <= Only: limits to exactly what you need
-	resources :nested_class, except: [:show]  # <= Nested resources/routes	# <= Except: excludes what you don't
-end
-```
