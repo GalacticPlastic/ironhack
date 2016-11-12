@@ -1,0 +1,24 @@
+<article class="col-sm-7 col-sm-offset-1">
+	<h2>Concerts Happening Today!</h2>
+	<ul>
+		<% @concerts_today.each do |concert| %>
+			<li>
+				<%= link_to concert.name, concert_path(concert.id) %>
+				<br><%= concert.city %>, <%= concert.state %>
+				<br><%= concert.price %>
+			</li>
+		<% end %>
+	</ul>
+</article>
+<aside class="col-sm-3">
+	<h2>Concerts Coming this Month:</h2>
+	<ul>
+		<% @concerts_this_month.each do |concert| %>
+			<li>
+				<%= link_to concert.name, concert_path(concert.id) %>
+				<br><%= concert.city %>, <%= concert.state %>
+				<br><%= concert.price %>
+			</li>
+		<% end %>
+	</ul>
+</aside>

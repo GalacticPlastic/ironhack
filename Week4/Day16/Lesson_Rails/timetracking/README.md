@@ -18,7 +18,8 @@ Intro to Rails
   	- db:migrate
 
  3. Add Route.
- 	/config/routes.rb:
+ 	
+ 	**/config/routes.rb**:
 	
 	```Ruby
 	Rails.application.routes.draw do
@@ -32,8 +33,7 @@ Intro to Rails
 	end
 	```
 
-	All pages added here.
-	For details on the DSL available within this file, see *guides.rubyonrails.org/routing.html*.
+	All pages added here. For details on the DSL available within this file, see *guides.rubyonrails.org/routing.html*.
 
 	### URL Parameters
 	Type the following into the terminal to view all helper paths:
@@ -42,7 +42,7 @@ Intro to Rails
 	$ rails routes
 	```
 
-	Helper Paths can be created automatically using Rails naming conventions by replacing the individual routes for each Controller (Object Class) in the config/routes.rb file like so:
+	Helper Paths can be created automatically using Rails naming conventions by replacing the individual routes for each Controller (Object Class) in the **/config/routes.rb** file like so:
 
 	```Ruby
 	resources :object_class do
@@ -54,6 +54,7 @@ Intro to Rails
 	```
 
  4. Create Controller.
+
 	The controller is a class. Deciding which pages belong to which controller is done thematically (highly subjective).
 
 	**IMPORTANT!** Controller naming convention is **PLURAL**!
@@ -63,7 +64,7 @@ Intro to Rails
 	$ rails generate controller site
 	```
 
-	Created two Ruby classes in /app/controllers/ :
+	Created two Ruby classes in **/app/controllers/** :
 	- application_controller.rb
 	- site_controller.rb
 
@@ -74,6 +75,7 @@ Intro to Rails
 	- **/** is the URI.
 
  5. Add Action / Method.
+
 	In the terminal, add generate the model the way you generated the controller. You can add the attributes in as well:
 
 	```
@@ -89,7 +91,7 @@ Intro to Rails
 	rails db:migrate
 	```
 
-	If you get an error because something was invalid in the model you generated (like if you added id:integer like I did), go to /db/migrate/ and open the #######_create_modelname.rb in there.
+	If you get an error because something was invalid in the model you generated (like if you added *id:integer* like I did), go to **/db/migrate/** and open the *#######_create_modelname.rb* in there.
 
 	Example:
 
@@ -111,7 +113,7 @@ Intro to Rails
 
 	Remove whatever crap you put in there that is preventing you from completing the migrate, save the file, and then type **rails db:migrate** in the terminal again. Voila!
 
-	Add the following to the SiteController class inside /app/controllers/site_controller.rb:
+	Add the following to the SiteController class inside **/app/controllers/site_controller.rb** :
 	```Ruby
 	class SiteController < ApplicationController
 		def home
@@ -123,19 +125,17 @@ Intro to Rails
 	```
 
  6. Create View.
-	Site_controller.rb expects the view file to be located at /app/views/site/.
-	Ex: /app/views/site/home.html.erb
 
-	Run the application by typing in "rails server" into the terminal.
-	Then visit http://localhost:3000
+	**Site_controller.rb** expects the view file to be located at **/app/views/site/**. Ex: **/app/views/site/home.html.erb**.
 
-	Views/layouts/application.html.erb is the page template file.
+	- Run the application by typing in "rails server" into the terminal.
+	- Then visit **http://localhost:3000**.
+	- **/Views/layouts/application.html.erb** is the page template file.
+	- Generate creates files, destroy removes them.
 
-	Generate creates files, destroy removes them.
-
-	Naming Conventions:
-	Action name = Template File name
-	Partial HTML snippet file names should begin with an underscore.
+	*Naming Conventions:*
+	- Action name = Template File name
+	- Partial HTML snippet file names should begin with an underscore.
 
 	Asset Tag Helpers are GREAT!...
 

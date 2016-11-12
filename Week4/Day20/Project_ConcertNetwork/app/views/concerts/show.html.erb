@@ -1,0 +1,20 @@
+<%= form_for @concert do |form| %>
+	<fieldset>
+		<%= form.label :date %>
+		<%= form.text_field :date %>
+	</fieldset>
+	<fieldset>
+		<%= form.label :venue %>
+		<%= form.text_area :venue %>
+	</fieldset>
+	<fieldset>
+		<%= form.label :city %>
+		<%= form.text_field :city %>
+	</fieldset>
+	<fieldset>
+		<%= form.label :state %>
+		<%= form.text_area :state %>
+	</fieldset>
+	<%= form.button %>
+	<%= link_to 'Cancel', concerts_path %>
+<% end %>

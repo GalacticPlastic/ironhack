@@ -4,19 +4,22 @@
 		<meta charset="utf-8">
 		<title>Ironhack Week 4 Project: Concert Network</title>
     	<%= csrf_meta_tags %>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
 	<body>
 		<header class="row">
 			<h1><a href="/">Site Title</a>
-			<%= render "navigation" %>
+			<%= render "inc/navigation" %>
 		</header>
 		<main class="row">
 			<%= yield %>
 		</main>
 		<footer class="row">
-			<%= render "navigation" %>
+			<%= render "inc/navigation" %>
 		</footer>
 	</body>
 </html>
