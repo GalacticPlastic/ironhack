@@ -1,1 +1,8 @@
 * { margin: 0; padding: 0; }
+main, section {
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+	width: 90%;
+}
+section { background: yellow; }
