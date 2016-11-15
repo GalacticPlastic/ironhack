@@ -6,3 +6,7 @@ main, section {
 	width: 90%;
 }
 section { background: yellow; }
+.masta-fade {
+	background: red;
+	padding: 20px;
+}
