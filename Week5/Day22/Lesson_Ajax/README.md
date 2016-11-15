@@ -30,4 +30,13 @@ APIs may or may not limit what data you can send and/or receive.
 | GET	    | /characters |	Retrieve the full list of characters. |
 | POST      | /characters |	Create a new character.				  |
 
+**Notes:**
 
+- String interpolation is *only* possible in a backtick string, which is also unaffected by line breaks.
+- *preventDefault* prevents the default action the browser makes on that event.
+
+**Food for Thought**
+A question mark symbol is appears at the end of a URL in the browser after a GET submission.
+
+# JSON
+Stands for **J**ava**S**cript **O**bject **N**otation.

@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	$('.js-fetch-char').on('click', fetchCharacters);
+	$('.js-add-char').on('submit', addCharacters);
 });
 function fetchCharacters () {
 	$.ajax ({
@@ -7,15 +8,50 @@ function fetchCharacters () {
 		url: "https://ironhack-characters.herokuapp.com/characters",
 		// Last 2 keys in hash are separate callbacks for success and error.
 		success: showCharacters,
-		error: handlError,
+		error: handleError,
 		// Keep comma on last, same as CSS final semi-colon to prevent accidental  syntax mistake in future.
 	});
+}
+function addCharacters (eventThing) {
+	// console.log('Stupid, Stupid Tests!!');
+	eventThing.preventDefault();
+	var nameInput = $('.js-name').val();
+	if (nameInput === '') {
+		nameInput = 'Err..';
+	}
+	var occupationInput = $('.js-occupation').val();
+	if (occupationInput === '') {
+		occupationInput = 'Something';
+	}
+	var weaponInput = $('.js-weapon').val();
+	if (weaponInput === '') {
+		weaponInput = 'A spatula that can flip ANYTHING';
+	}
+	var charInfo = {
+		name: nameInput,
+		occupation: occupationInput,
+		weapon: weaponInput,
+	};
+	$.ajax ({
+		type: "POST",
+		url: "https://ironhack-characters.herokuapp.com/characters",
+		data: charInfo,
+		success: addChar,
+		error: handleError,
+	});
+}
+function addChar (apiData) {
+	console.log('apiData');
 }
 function showCharacters (response) {
 	console.log('Fetch Character Success!');
 	// Test for Validation of Structure
 	console.log(response);
 	// Always print response. Every API has a different structure.
+
+	$('.js-char-list').empty();
+	// Prevents array from being duplicated with repeated button clicks.
+	
 	response.forEach(function (oneCharacter) {
 		var charItem = `
 			<tr>
@@ -31,7 +67,7 @@ function showCharacters (response) {
 		$('.js-char-list').append(charItem);
 	});
 }
-function handlError (error) {
+function handleError (error) {
 	console.log('Fetch Character Error!');
 	console.log(error.responseText);
 }
