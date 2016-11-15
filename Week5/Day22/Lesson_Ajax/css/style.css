@@ -1,0 +1,15 @@
+body {
+	font-size: 1.4em;
+	padding: 20px;
+	text-align: center; 
+}
+table {
+	margin: 10px auto;
+	text-align: left;
+	width: 90%;
+}
+th, td {
+	border: #ddd 1px solid;
+	padding: 5px 10px;
+}
+th { background: #ecf9ff; }
