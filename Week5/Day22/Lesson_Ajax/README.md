@@ -40,3 +40,4 @@ A question mark symbol is appears at the end of a URL in the browser after a GET
 
 # JSON
 Stands for **J**ava**S**cript **O**bject **N**otation.
+

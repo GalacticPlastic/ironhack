@@ -12,37 +12,6 @@ function fetchCharacters () {
 		// Keep comma on last, same as CSS final semi-colon to prevent accidental  syntax mistake in future.
 	});
 }
-function addCharacters (eventThing) {
-	// console.log('Stupid, Stupid Tests!!');
-	eventThing.preventDefault();
-	var nameInput = $('.js-name').val();
-	if (nameInput === '') {
-		nameInput = 'Err..';
-	}
-	var occupationInput = $('.js-occupation').val();
-	if (occupationInput === '') {
-		occupationInput = 'Something';
-	}
-	var weaponInput = $('.js-weapon').val();
-	if (weaponInput === '') {
-		weaponInput = 'A spatula that can flip ANYTHING';
-	}
-	var charInfo = {
-		name: nameInput,
-		occupation: occupationInput,
-		weapon: weaponInput,
-	};
-	$.ajax ({
-		type: "POST",
-		url: "https://ironhack-characters.herokuapp.com/characters",
-		data: charInfo,
-		success: addChar,
-		error: handleError,
-	});
-}
-function addChar (apiData) {
-	console.log('apiData');
-}
 function showCharacters (response) {
 	console.log('Fetch Character Success!');
 	// Test for Validation of Structure
@@ -66,6 +35,36 @@ function showCharacters (response) {
 		`;
 		$('.js-char-list').append(charItem);
 	});
+}
+function addCharacters (eventThing) {
+	eventThing.preventDefault();
+	var nameInput = $('.js-name').val();
+	// if (nameInput === '') {
+	// 	nameInput = 'Err..';
+	// }
+	// var occupationInput = $('.js-occupation').val();
+	// if (occupationInput === '') {
+	// 	occupationInput = 'Something';
+	// }
+	// var weaponInput = $('.js-weapon').val();
+	// if (weaponInput === '') {
+	// 	weaponInput = "I'm obviously not very clever.";
+	// }
+	// var charInfo = {
+	// 	name: nameInput,
+	// 	occupation: occupationInput,
+	// 	weapon: weaponInput,
+	// };
+	$.ajax ({
+		type: "POST",
+		url: "https://ironhack-characters.herokuapp.com/characters",
+		data: charInfo,
+		success: addChar,
+		error: handleError,
+	});
+}
+function addChar (apiData) {
+	console.log('apiData');
 }
 function handleError (error) {
 	console.log('Fetch Character Error!');
