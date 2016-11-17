@@ -1,21 +1,24 @@
 $(document).ready(function () {
 	$('#js-search-form').on('submit', fetchArtists);
 	$('#spotify-results').on('click', '.js-albums', fetchAlbums);
-	// Event Delegation!!!!
+	// Event Delegation!!!! (Best Practice)
 	// $('#myModal').on('shown.bs.modal', fetchAlbums);
+	$('[data-toggle="tooltip"]').tooltip();
 });
 function fetchArtists (eventThing) {
 	eventThing.preventDefault();
-	console.log(userInput);
 	var userInput = $('.js-artist-name').val();
+	var userSearch = userInput.split(" ").join("+");
+	// Preemptive cross-browser compatibility patch.
+	console.log(userInput);
 	$.ajax ({
 		type: "GET",
-		url: `https://api.spotify.com/v1/search?type=artist&q=${userInput}`,
-		success: artistList,
-		error: artistError,
+		url: `https://api.spotify.com/v1/search?type=artist&q=${userSearch}`,
+		success: listArtists,
+		error: errorArtists,
 	});
 }
-function artistList (response) {
+function listArtists (response) {
 	// console.log ("Artist Response Success");
 	console.log(response);
 	var searchArtists = response.artists.items;
@@ -29,13 +32,13 @@ function artistList (response) {
 		var searchResults = `
 			<div class="spotify-artist col-md-4">
 				<h3>${anArtist.name}</h3>
-				<a class="js-albums" data-toggle="modal" data-target="#myModal" data-artist-id="${anArtist.id}"><img class="img-responsive" src="${artistPic}" /></a>
+				<a class="js-albums" data-toggle="modal" data-target="#myModal" data-artist-id="${anArtist.id}" data-artist-name="${anArtist.name}"><img class="img-responsive" src="${artistPic}" data-toggle="tooltip" title="${anArtist.id}" /></a>
 			</div>
 		`;
 		$("#spotify-results").append(searchResults);
 	});
 }
-function artistError (error) {
+function errorArtists (error) {
 	// console.log("Artist Search Error")
 	console.log(error.responseText);
 }
@@ -46,11 +49,11 @@ function fetchAlbums (eventThing) {
 	$.ajax ({
 		type: "GET",
 		url: `https://api.spotify.com/v1/artists/${artistId}/albums`,
-		success: albumList,
-		error: albumError,
+		success: listAlbums,
+		error: errorAlbums,
 	});
 }
-function albumList (response) {
+function listAlbums (response) {
 	console.log("Artist Albums:");
 	console.log(response);
 	var artistAlbums = response.items;
@@ -61,20 +64,22 @@ function albumList (response) {
 		} else {
 			albumPic = anAlbum.images[0].url;
 		}
+		var albumArtist = anAlbum.artists[0].name;
+		// var albumArtist = $('.js-albums').dataAttr('artist-id');
 		// var albumArtist;
 		// if (anAlbum.artists.length != 0) {
 		// 	albumArtist = anAlbum.artists[0].name;
 		// }
 		var albumResults = `
 			<a class="artist-album col-md-4">
-				<img class="img-responsive" src="${albumPic}" alt="${anAlbum.name}" title="${anAlbum.name}" />
+				<img class="img-responsive" src="${albumPic}" alt="${anAlbum.name}" title="${anAlbum.name}" data-toggle="tooltip" />
 			</a>
 		`;
+		$('.modal-title').html(`Albums for <strong>${albumArtist}</strong>`);
 		$('.modal-body').append(albumResults);
-		// $('.modal-title').html(`Albums for <strong>${albumArtist}</strong>`);
 	});
 }
-function albumError (error) {
+function errorAlbums (error) {
 	// console.log("Album Search Error");
 	console.log(error.responseText);
 }
