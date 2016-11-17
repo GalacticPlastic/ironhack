@@ -1,0 +1,62 @@
+<h1>Pokédex</h1>
+<ul class="pokedex-list">
+  <% @pokemon.each do |pkmn| %>
+  <% puts pkmn %>
+    <li class="clearfix">
+      <button class="js-show-pokemon btn btn-link" data-pokemon-uri="<%= pkmn["resource_uri"] %>"><%= pkmn["name"] %></button>
+    </li>
+  <% end %>
+</ul>
+<div class="modal fade js-pokemon-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <h3 class="modal-title">
+          <p class="pm-name"></p>
+          <small class="pm-id"></small>
+        </h3>
+      </div>
+      <div class="modal-body">
+        <dl class="dl-horizontal">
+          <dt>Height</dt>
+          <dd class="pm-height"></dd>
+          <dt>Weight</dt>
+          <dd class="pm-weight"></dd>
+          <dt>Hit Points</dt>
+          <dd class="pm-hp"></dd>
+          <dt>Attack</dt>
+          <dd class="pm-attack"></dd>
+          <dt>Defense</dt>
+          <dd class="pm-defense"></dd>
+          <dt>Special Attack</dt>
+          <dd class="pm-spatk"></dd>
+          <dt>Special Defense</dt>
+          <dd class="pm-spdef"></dd>
+          <dt>Speed</dt>
+          <dd class="pm-speed"></dd>
+          <dt>Type(s)</dt>
+          <dd class="pm-type"><ul></ul></dd>
+        </dl>
+        <h4>Description:</h4>
+        <p class="pm-description"></p>
+        <button class="pm-evolutions">View All Evolutions</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade js-evolution">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <h3 class="modal-title">Evolutions</h3>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+</div>
