@@ -12,19 +12,16 @@
     <script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
-	<div class="modal fade" tabindex="-1" role="dialog">
+	<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title">Modal title</h4>
+	        <h4 class="modal-title">Albums on Spotify</h4>
 	      </div>
-	      <div class="modal-body">
-	        <p>One fine body&hellip;</p>
-	      </div>
+	      <div class="modal-body clearfix"></div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
 	      </div>
 	    </div>
 	  </div>
@@ -34,8 +31,6 @@
 		<input type="text" class="js-artist-name" placeholder="Specify Artist Name">
 		<button>Search Artists</button>
 	</form>
-	<section id="spotify-results">
-	</section>
-
+	<section id="spotify-results" class="clearfix"></section>
 </body>
 </html>

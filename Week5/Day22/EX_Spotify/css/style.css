@@ -1,27 +1,38 @@
 body {
-	/*background: #000;*/
-	font-size: 1.4em;
+	font-size: 1.2em;
 	padding: 20px;
 	text-align: center; 
 }
 h1 { padding-bottom: 20px; }
 #spotify-results {
-	/*background: #0085A1;*/
-	border: #ccc 2px solid;
-	color: #fff;
 	margin: 20px auto;
-	padding: 20px 0 20px 4%;
 	text-align: left;
 	width: 95%;
 }
-.spotify-artist {
-	display: inline-block;
-	float: left;
-	margin: 0 3% 5px 0;
-	max-height: 400px;
+.spotify-artist, a.js-albums, .artist-album {
+	margin: 0;
+	max-height: 220px;
 	overflow: hidden;
-	width: 30%;
 }
-.spotify-artist h3 { margin: 20px 0 5px; }
-.spotify-artist img { width: 100%; }
+.spotify-artist h3 {
+	font-size: 16px;
+	line-height: 18px;
+	margin: 20px 0 10px;
+	text-align: center;
+}
+a.js-albums {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	display: inline-block;
+	padding: 4px;
+}
+.artist-album img {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin: 5px;
+	padding: 4px;
+}
 .clear { clear: both; }
+.modal-title { font-weight: normal; }

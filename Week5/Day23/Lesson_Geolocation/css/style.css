@@ -1,0 +1,15 @@
+body {
+	font-size: 1.4em;
+	padding: 20px;
+}
+h1 { text-align: center; }
+table {
+	margin: 10px auto;
+	text-align: left;
+	width: 90%;
+}
+td {
+	border: #ddd 1px solid;
+	padding: 5px 10px;
+}
+th { background: #ecf9ff; }
