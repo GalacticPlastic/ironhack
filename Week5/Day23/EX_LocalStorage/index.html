@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Save my color</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="button-container">
+      <button class="color-changer" data-color="blue">Blue</button>
+      <button class="color-changer" data-color="red">Red</button>
+      <button class="color-changer" data-color="yellow">Yellow</button>
+      <button class="color-changer" data-color="green">Green</button>
+      <button class="color-changer" data-color="pink">Pink</button>
+      <button class="color-changer" data-color="black">Black</button>
+    </div>
+    <section id="media">
+      <video src="http://i.istockimg.com/video_passthrough/53475074/153/53475074.mp4" width="50%" controls loop autoplay>
+        <source src="http://someotherlinktoanothervideo.com">
+        <track kind="subtitles" src="subtitle_file.en.vtt" srclang="en" label="English">
+      </video>
+      <video alt="Dog loves the wind video" poster="http://media.istockphoto.com/videos/dog-loves-the-wind-video-id140368041?s=640_adpd" class="ng-scope" src="http://media.istockphoto.com/videos/dog-loves-the-wind-video-id140368041" type="video/mp4"></video>
+      <!--http://media.istockphoto.com/videos/happy-dog-in-car-video-id140368040-->
+
+      <audio src="2chainz.mp3"></audio>
+      <button onclick="document.getElementById('audio').volume+=0.1">Increase Volume</button>
+    </section>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
