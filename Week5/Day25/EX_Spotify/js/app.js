@@ -2,6 +2,7 @@ $(document).ready(function () {
 	$('#js-search-form').on('submit', fetchTrack);
 	$('.btn-play').on('click', toggleAudio);
 	$('.js-player').on('timeupdate', trackTime);
+	$('.author').on('click', fetchArtist);
 });
 function fetchTrack (eventThing) {
 	eventThing.preventDefault();
@@ -20,12 +21,13 @@ function songTrack (response) {
 	var trackArtist = trackSong.artists[0].name;
 	var trackTitle = trackSong.name;
 	var trackCover = trackSong.album.images[0].url;
-	$('.cover').html(`<img src="${trackCover}" alt="${trackTitle} by ${trackArtist}" />`);
+	var trackAudio = trackSong.preview_url;
+	$('.cover img').attr("src", `${trackCover}`);
+	$('.cover img').attr("alt", `${trackTitle} by ${trackArtist}`);
 	$('.title').text(trackTitle);
 	$('.author').text(trackArtist);
-	// console.log("potato");
-	var trackAudio = trackSong.preview_url;
 	$('audio').attr("src", `${trackAudio}`);
+	$('.author').attr("data-artist-id", `${trackSong.artists[0].id}`);
 	$('.btn-play').removeClass('disabled');
 };
 function toggleAudio () {
@@ -38,10 +40,30 @@ function toggleAudio () {
 }
 function trackTime () {
 	var current = $('.js-player').prop('currentTime');
-	// var trackProgress = ('Current time: ' + current);
 	$('progress').attr("value", `${current}`);
 };
-
+function fetchArtist () {
+	var artistId = $(this).data('artist-id');
+	console.log(`Song Artist ID: ${artistId}`);
+	$.ajax ({
+		type: "GET",
+		url: `https://api.spotify.com/v1/artists/${artistId}`,
+		success: songArtist,
+		error: handleError,
+	});
+};
+function songArtist (response) {
+	console.log('Po-po-potato!');
+	console.log(response);
+	var artistImage = response.images[0].url;		// Array, dammit
+	var artistGenres = response.genres.join(", ");	// Array, dammit
+	$('#artist-modal').modal('show');
+	$('.js-modal-artist').text(response.name);
+	$('.js-photo').attr("src", `${artistImage}`);
+	$('.js-genres').text(artistGenres);
+	$('.js-followers').text(response.followers.total);
+	$('.js-popularity').text(response.popularity);
+};
 function handleError (error) {
 	console.log('You fail at life, brah.');
 	console.log(error.responseText);
