@@ -3,6 +3,7 @@ $(document).ready(function () {
 	$('.btn-play').on('click', toggleAudio);
 	$('.js-player').on('timeupdate', trackTime);
 	$('.author').on('click', fetchArtist);
+	$('.js-more').on('click', searchResults);
 });
 function fetchTrack (eventThing) {
 	eventThing.preventDefault();
@@ -64,6 +65,20 @@ function songArtist (response) {
 	$('.js-followers').text(response.followers.total);
 	$('.js-popularity').text(response.popularity);
 };
+function searchResults () {
+	eventThing.preventDefault();
+	var userInput = $('.js-track-search').val();
+	console.log(`Search term: ${userInput}`);
+	$.ajax ({
+		type: "GET",
+	// 	url: `https://api.spotify.com/v1/search?type=track&q=${userInput}`,
+		success: listTracks,
+		error: handleError,
+	});
+};
+// function listTracks (response) {
+	
+// };
 function handleError (error) {
 	console.log('You fail at life, brah.');
 	console.log(error.responseText);

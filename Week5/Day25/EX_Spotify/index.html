@@ -12,6 +12,7 @@
 	<form id="js-search-form">
 		<input type="text" class="js-track-search" placeholder="Enter a Song Name">
 		<button>Search Tracks</button>
+		<button class="js-more">See More Results</button>
 	</form>
 	<div class="widget">
 		<div class="header">
@@ -37,25 +38,35 @@
 	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
 	        		<h2 class="js-modal-artist">This is the modal's header.</h2>
 	        	</div>
-	        	<div class="modal-body">
-	        		<section class="row clearfix">
-	        			<img class="js-photo" src="" alt="" title="">
-	        			<table class="artist-details">
-							<tr>
-								<td>Genres:</td>
-								<td class="js-genres"></td>
-							</tr>
-							<tr>
-								<td>Followers:</td>
-								<td class="js-followers"></td>
-							</tr>
-							<tr>
-								<td>Popularity:</td>
-								<td class="js-popularity"></td>
-							</tr>
-	        			</dl>
-	        		</section>
+	        	<div class="modal-body clearfix">
+	        		<img class="js-photo" src="" alt="" title="">
+	        		<table class="artist-details">
+						<tr>
+							<td>Genres:</td>
+							<td class="js-genres"></td>
+						</tr>
+						<tr>
+							<td>Followers:</td>
+							<td class="js-followers"></td>
+						</tr>
+						<tr>
+							<td>Popularity:</td>
+							<td class="js-popularity"></td>
+						</tr>
+	        		</dl>
 	        	</div>
+	        </div>
+		</div>
+	</div>
+	<!-- Bonus Iteration #2: Search Results -->
+	<div id="search-modal" class="modal fade js-modal">
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+	        		<h2>Additional Search Results</h2>
+	        	</div>
+	        	<div class="modal-body" clearfix"></div>
 	        </div>
 		</div>
 	</div>
