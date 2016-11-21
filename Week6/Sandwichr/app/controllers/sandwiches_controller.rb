@@ -8,9 +8,17 @@ class SandwichesController < ApplicationController
 		sandwich = Sandwich.create(sandwich_params)
 		render json: sandwich
 	end
+	def add_ingredient
+		sandwich = Sandwich.find(params[:id])
+		ingredient = Ingredients.find_by(id: params[:ingredient_id])
+		sandwich.ingredients.push(ingredient)
+		# SandwichIngredient.create(sandwich_id: params[:id], ingredient_id: params[:ingredient_id])
+		render json: sandwich
+	end
 	def show
 		sandwich = Sandwich.find(params[:id])
-		render json: sandwich
+		ingredients = sandwich.ingredients
+		render json: sandwich, include: [:ingredients]
 	end
 	def update
 		sandwich = Sandwich.find(params[:id])

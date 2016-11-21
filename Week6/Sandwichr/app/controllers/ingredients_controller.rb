@@ -10,7 +10,8 @@ class IngredientsController < ApplicationController
 	end
 	def show
 		ingredient = Ingredient.find(params[:id])
-		render json: ingredient
+		sandwich = ingredient.sandwiches
+		render json: ingredient, include: [:sandwiches]
 	end
 	def update
 		ingredient = Ingredient.find(params[:id])
