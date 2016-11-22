@@ -266,7 +266,7 @@ By default, Rails uses [CoffeeScript](http://coffeescript.org)
 instead of JavaScript. If you want to use JavaScript, you have to disable CoffeScript.
 
 1. Remove (or comment out) the `coffee-rails` gem
-   in your [`Gemfile`](Gemfile#L15-L16).
+   in your [`Gemfile`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/Gemfile#L15-L16).
 2. Run `bundle install` in your terminal to update your gems.
 3. Delete all `.coffee` files in
    [`app/assets/javascripts/`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/).
