@@ -1,12 +1,22 @@
 Intro to Rails
 -----------------
- 1. Create a New Rails Application.
+ 1. ActiveRecord Shortcut for Steps 2-7:
+	 ```ruby
+	rails g resource ModelName attribute_name:string attribute_number:integer
+	```
+	
+	- Generates the **Model**.
+	- Creates the **Migration** to Create the Table in the Database.
+	- Generates the **Controller**.
+	- Adds **resources :model_name** to *routes.rb*.
+
+ 2. Create a New Rails Application.
 
   	```
   	$ rails new Folder_Name
   	```
 
- 2. Create a New Database.
+ 3. Create a New Database.
 
    	```
   	$ rails db:create
@@ -16,8 +26,9 @@ Intro to Rails
   	- db:drop
   	- db:create
   	- db:migrate
+  	- db:seed (if you have seeds)
 
- 3. Add Route.
+ 4. Add Route.
  	
  	**/config/routes.rb**:
 	
@@ -53,7 +64,7 @@ Intro to Rails
 	end
 	```
 
- 4. Create Controller.
+ 5. Create Controller.
 
 	The controller is a class. Deciding which pages belong to which controller is done thematically (highly subjective).
 
@@ -74,7 +85,7 @@ Intro to Rails
 	- **get** is the HTTP verb.
 	- **/** is the URI.
 
- 5. Add Action / Method.
+6. Add Action / Method.
 
 	In the terminal, add generate the model the way you generated the controller. You can add the attributes in as well:
 
@@ -124,7 +135,7 @@ Intro to Rails
 	end
 	```
 
- 6. Create View.
+ 7. Create View.
 
 	**Site_controller.rb** expects the view file to be located at **/app/views/site/**. Ex: **/app/views/site/home.html.erb**.
 
