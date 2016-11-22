@@ -1,0 +1,20 @@
+<h1>Sign Up!</h1>
+<%= form_for :user, url: '/users' do |f| %>
+	<fieldset>
+		<%= f.label :username, "Name" %>
+		<%= f.text_field :username %>
+	</fieldset>
+	<fieldset>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</fieldset>
+	<fieldset>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</fieldset>
+	<fieldset>
+		<%= f.label :password_confirmation, "Confirm Password" %>
+		<%= f.password_field :password_confirmation %>
+	</fieldset>
+	<%= f.button %>
+<% end %>

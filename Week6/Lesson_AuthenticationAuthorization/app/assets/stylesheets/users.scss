@@ -1,0 +1,13 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+fieldset {
+	border: none;
+	margin-bottom: 5px;
+}
+label {
+	display: inline-block;
+	margin-right: 10px;
+	text-align: right;
+	width: 80px;
+}
