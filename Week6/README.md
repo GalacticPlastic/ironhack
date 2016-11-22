@@ -17,3 +17,6 @@ Distinctions between anon and existing users.
 	Can see their own profile.
 - Admin
 	Can see complete list of users.
+
+
+Password encryption uses exact same encryption for exact same password.

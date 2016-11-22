@@ -1,22 +1,13 @@
 Intro to Rails
 -----------------
- 1. ActiveRecord Shortcut for Steps 2-7:
-	 ```ruby
-	rails g resource ModelName attribute_name:string attribute_number:integer
-	```
-	
-	- Generates the **Model**.
-	- Creates the **Migration** to Create the Table in the Database.
-	- Generates the **Controller**.
-	- Adds **resources :model_name** to *routes.rb*.
 
- 2. Create a New Rails Application.
+ 1. Create a New Rails Application.
 
   	```
   	$ rails new Folder_Name
   	```
 
- 3. Create a New Database.
+ 2. Create a New Database.
 
    	```
   	$ rails db:create
@@ -27,6 +18,16 @@ Intro to Rails
   	- db:create
   	- db:migrate
   	- db:seed (if you have seeds)
+
+ 3. ActiveRecord Shortcut for Steps 4-7:
+	 ```ruby
+	rails g resource ModelName attribute_name:string attribute_number:integer
+	```
+	
+	- Generates the **Model**.
+	- Creates the **Migration** to Create the Table in the Database.
+	- Generates the **Controller**.
+	- Adds **resources :model_name** to *routes.rb*.
 
  4. Add Route.
  	
