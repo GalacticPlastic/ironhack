@@ -9,7 +9,7 @@ Build Your Own API Tutorial
 * Resources
 * Supported Operations
 
-####Base URL
+###Base URL
 
 * Sandwichr Sandwich API:
 	http://localhost:3000/sandwiches
@@ -18,7 +18,7 @@ Build Your Own API Tutorial
 * Sandwiches API Path:
 	/sandwiches
 
-####Communication Formats
+###Communication Formats
 
 * JSON:
 	```{"hello": true}```
@@ -84,22 +84,22 @@ rails g resource Ingredient name:string calories:integer
 
 An API must **always render json** - not redirect, or render a view.
 
-
+## Models
 Many to Many Associations
 rails g model SandwichIngredient sandwich:belongs_to ingredient:belongs_to
 
-Sandwich
+**sandwich**
 has_many :sandwich_ingredients
 has_many :ingredients, through: "sandwich_ingredients"
 
-Sandwich_ingredients
+**sandwich_ingredients**
 belongs_to :ingredient
 belongs_to :sandwich
 
-Ingredients
+**ingredients**
 has_many :sandwich_ingredients
 has_many :sandwiches, through: "sandwich_ingredients"
 
+```ruby
 rails console
-
-to_bootcamp.tags.each { |x| puts x.name }
+to_bootcamp.tags.each { |x| puts x.name }```

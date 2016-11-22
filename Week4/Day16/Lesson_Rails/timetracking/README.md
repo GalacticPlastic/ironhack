@@ -208,3 +208,93 @@ CRUD stands for:
 | Destroy | Deletes              | (Default 1 Row)     |
 
 **Show**, **Edit**, and **Delete** require the **ID** to function.
+
+# Many To Many Associations
+
+Many-to-Many associations need an additional model to work. In the industry it's known as a _join table_ (aka, the _middle man_). In the `Post` and `Tag` example, it is named `PostTag`.
+
+Commands used to generate the models:
+
+```bash
+$ rails generate model Post    title:string    text:text       user:belongs_to
+$ rails generate model Tag     name:string
+
+$ rails generate model PostTag post:belongs_to tag:belongs_to
+```
+
+See the final schema in the [`db/schema.rb`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week6/day1/many_to_many_blog/db/schema.rb).
+
+See the 3 models for the specific wiring:
+- [`Post` model](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week6/day1/many_to_many_blog/app/models/post.rb#L4-L5)
+- [`Tag` model](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week6/day1/many_to_many_blog/app/models/tag.rb#L2-L3)
+- [`PostTag` model](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week6/day1/many_to_many_blog/app/models/post_tag.rb#L2-L3)
+
+Once the wiring is complete, see examples of using the association:
+[in the `seeds.rb` file](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week6/day1/many_to_many_blog/db/seeds.rb#L33-L42).
+
+Even though there are 3 approaches to make a Many-to-Many connection, they all have the same result:
+
+1. [Creating a row in the join table with the IDs](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week6/day1/many_to_many_blog/db/seeds.rb#L33-L34)
+2. [Creating a row in the join table with the `belongs_to`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week6/day1/many_to_many_blog/db/seeds.rb#L37-L38)
+3. [Push to the `has_many` association](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week6/day1/many_to_many_blog/db/seeds.rb#L41-L42)
+
+Read more about many to many associations in Rails in the
+[Rails Guide](http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association).
+
+### Rails App/Models Naming Convention:
+```Ruby
+class Sandwich < ApplicationRecord
+	# SnakeCase and Pluralize class name:
+	# SandwichIngredient
+	# Sandwich Ingredient
+	# Sandwich_Ingredient
+	# sandwich_ingredient
+	# sandwich_ingredients
+	has_many :sandwich_ingredients
+	has_many :ingredients, through: "sandwich_ingredients"	
+end
+```
+
+Using JS in Rails
+=================
+
+There are few gotchas when using JavaScript in a Rails application.
+
+### Step 1: Remove CoffeeScript ###
+
+By default, Rails uses [CoffeeScript](http://coffeescript.org)
+instead of JavaScript. If you want to use JavaScript, you have to disable CoffeScript.
+
+1. Remove (or comment out) the `coffee-rails` gem
+   in your [`Gemfile`](Gemfile#L15-L16).
+2. Run `bundle install` in your terminal to update your gems.
+3. Delete all `.coffee` files in
+   [`app/assets/javascripts/`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/).
+4. Run `rails tmp:clear` in your terminal to refresh your app's temporary files.
+
+### Step 2: Use the `Sprockets-ES6` Gem ###
+
+If you are using
+[JavaScript class syntax](https://ponyfoo.com/articles/es6-classes-in-depth) or
+[template strings](https://ponyfoo.com/articles/es6-template-strings-in-depth),
+you will get an error when you try to deploy your app to Heroku. To avoid that error, use the `sprockets-es6` gem.
+
+1. Add the `sprockets-es6` gem to your [`Gemfile`](Gemfile#L3)
+   with the [special `require` option](Gemfile#L3).
+2. Change the extension of any JavaScript files
+   that use classes or template strings from `.js` to `.es6`.
+   [See our `blah.es6` file](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/blah.es6)
+   for an example.
+3. You **should never**
+   change the extensions of Rails' special JavaScript files:
+   [`application.js`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/application.js) and
+   [`cable.js`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/cable.js).
+
+### Step 3: Don't Use the Document's `Ready` Event ###
+
+Rails comes with a gem named
+[Turbolinks](http://guides.rubyonrails.org/working_with_javascript_in_rails.html#turbolinks)
+that does some funky stuff with JavaScript to make your pages load faster. Because of that, you can't depend on the `$(document).ready()` callback. Turbolinks provides a special event (`turbolinks:load`)
+that you should use instead.
+
+[See the Ironhack `pizza.js` file](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/pizza.js#L9) for an example.
