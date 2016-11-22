@@ -1,0 +1,88 @@
+h1 {
+	font-size: 2em;
+	font-weight: normal;
+	text-align: center;
+	text-shadow: #000 1px 1px 3px;
+	margin: 20px 0;
+}
+h1 a { color: #fff; }
+h2 { font-weight: normal; text-align: center; }
+header, main, footer {
+	width: 100%;
+}
+header, nav { margin: 0 auto; }
+/* --- Header --- */
+header nav {
+	background: #323232;
+	padding: 15px;
+}
+nav ul li {
+	color: #ddd;
+	display: inline-block;
+	list-style: none;
+	padding-right: 20px;
+}
+nav a {
+	color: #fff;
+	font-weight: bold;
+}
+main {
+	background: #fff;
+	margin: 0 auto 20px;
+	min-height: 65vh;
+	padding: 5vh 5vw;
+	width: 90vw;
+}
+main:after { clear: both; }
+/* --- Projects --- */
+#contacts td:first-of-type { width: 15%; }
+#contacts {
+	border: #ddd 1px solid;
+	font-size: 0.9em;
+	font-weight: normal;
+	margin: 10px auto;
+	width: 100%;
+}
+#contacts td {
+	border: #ddd 1px solid;
+	padding: 10px;
+}
+#cta a {
+	background: red;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	margin: 20px auto 0;
+	padding: 10px 20px;
+	text-align: center;
+	text-shadow: #444 1px 1px 1px;
+	width: 150px;
+}
+#cta:after { clear: both; }
+small a {
+	background: #eaeaea;
+	border: #ccc 1px solid;
+	border-radius: 3px;
+	color: #444;
+	display: inline-block;
+	margin: 10px 5px;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+form {
+	margin: 0 auto;
+	width: 350px;
+}
+fieldset {
+	border: none;
+	margin: 20px 0 10px;
+}
+label {
+	display: inline-block;
+	line-height: 20px;
+	vertical-align: top;
+	width: 80px;
+}
+input[type="text"], textarea { width: 250px; }
+input[type="text"] { height: 18px; }
+textarea { height: 36px; }

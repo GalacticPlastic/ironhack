@@ -1,0 +1,33 @@
+<h2>Contact: <strong><%= @new_contact.name %></strong></h2>
+
+<h3>Project Details</h3>
+<table id="task">
+	<tbody>
+		<tr>
+			<td width="30%">Name:</td>
+			<td><strong><%= @new_contact.name %></strong></td>
+		</tr>
+		<tr>
+			<td>Address:</td>
+			<td><strong><%= @new_contact.address %></strong></td>
+		</tr>
+		<tr>
+			<td>Phone:</td>
+			<td><strong><%= @new_contact.phone %></strong></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><strong><%= @new_contact.email %></strong></td>
+		</tr>
+		<tr>
+			<td>Added to Address Book on:</td>
+			<td><strong><%= @new_contact.created_at %></strong></td>
+		</tr>
+		<tr>
+			<td>Last Updated:</td>
+			<td><strong><%= @new_contact.updated_at %></strong></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<small><%= link_to "View All Contacts", contacts_path %><%= link_to "Add New Contact", new_contact_path %></small>

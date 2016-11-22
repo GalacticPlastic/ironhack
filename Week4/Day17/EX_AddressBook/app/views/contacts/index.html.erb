@@ -1,0 +1,19 @@
+<h2>Contacts</h2>
+<br>
+<table id="contacts">
+	<tbody>
+		<% @contacts.each do |contact| %>
+			<tr>
+				<td><%= link_to contact.name, contact_path(contact.id) %></td>
+				<td><%= contact.address %></td>
+				<td><%= contact.phone %></td>
+				<td><%= contact.email %></td>
+				<td>
+					<%= link_to "Edit", edit_contact_path(contact.id) %>
+					<br><%= link_to "Delete", contact_path(contact.id), method: "delete", data: { confirm: "Are you sure?" } %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<div id="cta"><%= link_to "Add New Contact", new_contact_path %></div>

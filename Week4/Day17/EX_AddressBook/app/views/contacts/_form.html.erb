@@ -1,0 +1,20 @@
+<%= form_for @new_contact do |form| %>
+	<fieldset>
+		<%= form.label :name %>
+		<%= form.text_field :name %>
+	</fieldset>
+	<fieldset>
+		<%= form.label :address %>
+		<%= form.text_area :address %>
+	</fieldset>
+	<fieldset>
+		<%= form.label :phone %>
+		<%= form.text_field :phone %>
+	</fieldset>
+	<fieldset>
+		<%= form.label :email %>
+		<%= form.text_field :email %>
+	</fieldset>
+	<%= form.button %>
+	<%= link_to 'Cancel', contact_path %>
+<% end %>
