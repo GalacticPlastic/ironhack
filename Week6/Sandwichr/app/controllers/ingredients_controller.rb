@@ -6,6 +6,12 @@ class IngredientsController < ApplicationController
 	end
 	def create
 		ingredient = Ingredient.create(ingredient_params)
+		# Refactored shortcut for:
+		# ingredient = Ingredient.new(
+		# 	name: params[:ingredient][:name]
+		# 	calories: params[:ingredient][:calories]
+		# )
+		# ingredient.save
 		render json: ingredient
 	end
 	def show
@@ -26,5 +32,6 @@ class IngredientsController < ApplicationController
 	private
 	def ingredient_params
 		params.require(:ingredient) .permit(:name, :calories)
+		# Strong parameters in nested fields for sanitizing user input.
 	end
 end
