@@ -27,3 +27,4 @@ class ApplicationController < ActionController::Base
 end
 # Private methods do not inherit.
 # Give access to everything.
+# Gem Devise

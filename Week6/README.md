@@ -241,6 +241,4 @@ $ rails console
 $ User.create(username: "New Admin", email: "sample@email.com", password: "password", password_confirmation: "password", role: "admin")
 $ new_admin = User.find_by(email: "suckit@mailinator.com")
 $ new_admin.update(role: "admin", password: "password", password_confirmation: "password")
-
-
 Methods in Rails Controllers are called _Actions_.
