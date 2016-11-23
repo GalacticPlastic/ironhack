@@ -16,7 +16,7 @@ Quick Links to Programming Notes
 
 1. Fundamental Syntax Difference Between JS & Ruby - [`View ReadMe`](Week3/Day13/Lesson_Javascript/README.md).
 2. Intro to jQuery - [`View ReadMe`](Week5/Day21/Lesson_JQuery/README.md).
-3. Web Storage - [`View ReadMe`](Week5/Day23/EX_LocalStorage/README.md).
+3. Web Storage - [`View ReadMe`](Week5/Day23/EX_LocalStorage/readme.md).
 
 ### AJAX, JSON and APIs
 1. Intro to AJAX - [`View ReadMe`](Week5/Day22/Lesson_Ajax/README.md).

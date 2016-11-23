@@ -12,34 +12,36 @@ Build Your Own API Tutorial
 ###Base URL
 
 * Sandwichr Sandwich API:
-	http://localhost:3000/sandwiches
+	- http://localhost:3000/sandwiches
 * Base URL:
-	http://localhost:3000
+	- http://localhost:3000
 * Sandwiches API Path:
-	/sandwiches
+	- /sandwiches
 
 ###Communication Formats
 
 * JSON:
-	```{"hello": true}```
+	- ```{"hello": true}```
 	- Built-in support in virtually every language (most common).
 	- Lightweight, less data to send per requests.
 	- Readable for people as well as bots.
+
 * XML:
-	```<hello>true</hello```
+	- ```<hello>true</hello>```
 	- Transforms into HTML-like syntax (XHTML) with ease via XSLT.
 	- Stable, long-term enterprise favorite.
 	- Easy to deeply nest objects for later retrieval using XPath and XQuery libraries.
 	- Con: More data for same amount of info.
+
 * MsgPack:
-	```"\x81\xA5hello\xC3"```
+	- ```"\x81\xA5hello\xC3"```
 	- Faster than JSON and XML to transfer.
 	- Smaller, lighter then JSON.
 	- Too new for reliable, built-in support (least popular as of now).
 	- Illegible for people.
 
 #####Examples:
-```JSON
+```
 	def show
 		user = User.find(params[:id])
 		render json: user
@@ -51,7 +53,7 @@ Build Your Own API Tutorial
 	}
 ```
 
-```XML
+```xml
 	def show
 		user = User.find(params[:id])
 		render xml: user
@@ -64,9 +66,11 @@ Build Your Own API Tutorial
 	</user>
 ```
 
+Generate Rails Resource Routes through the Terminal:
+
 ```ruby
-rails g resource Sandwich name:string bread_type:string
-rails g resource Ingredient name:string calories:integer
+	rails g resource Sandwich name:string bread_type:string
+	rails g resource Ingredient name:string calories:integer
 ```
 
 - Generates the **Model**.
@@ -85,21 +89,23 @@ rails g resource Ingredient name:string calories:integer
 An API must **always render json** - not redirect, or render a view.
 
 ## Models
-Many to Many Associations
-rails g model SandwichIngredient sandwich:belongs_to ingredient:belongs_to
+**Many to Many Associations**
 
-**sandwich**
-has_many :sandwich_ingredients
-has_many :ingredients, through: "sandwich_ingredients"
+```rails g model SandwichIngredient sandwich:belongs_to ingredient:belongs_to```
 
-**sandwich_ingredients**
-belongs_to :ingredient
-belongs_to :sandwich
+### Sandwich
+- has_many :sandwich_ingredients
+- has_many :ingredients, through: "sandwich_ingredients"
 
-**ingredients**
-has_many :sandwich_ingredients
-has_many :sandwiches, through: "sandwich_ingredients"
+### Sandwich_Ingredients
+- belongs_to :ingredient
+- belongs_to :sandwich
 
-```ruby
-rails console
-to_bootcamp.tags.each { |x| puts x.name }```
+### Ingredients
+- has_many :sandwich_ingredients
+- has_many :sandwiches, through: "sandwich_ingredients"
+
+```
+	rails console
+	to_bootcamp.tags.each { |x| puts x.name }
+```

@@ -176,7 +176,7 @@ In **/app/controllers/sessions_ontroller.rb**, add methods for **new**, **create
 ```
 
 In **/app/views/sessions/new.html.erb** :
-```ruby
+```
 <h1>Login</h1>
 <%= form_tag "/login" do %>
 	<fieldset>
