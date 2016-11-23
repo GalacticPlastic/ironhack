@@ -24,3 +24,6 @@ SandwichIngredient.create!(sandwich_id: sandwich1.id, ingredient_id: ingredient1
 SandwichIngredient.create!(sandwich_id: sandwich1.id, ingredient_id: ingredient2.id)
 SandwichIngredient.create!(sandwich_id: sandwich2.id, ingredient_id: ingredient1.id)
 SandwichIngredient.create!(sandwich_id: sandwich2.id, ingredient_id: ingredient2.id)
+
+sandwich1.update_calories
+sandwich2.update_calories

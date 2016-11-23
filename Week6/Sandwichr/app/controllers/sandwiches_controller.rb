@@ -12,6 +12,8 @@ class SandwichesController < ApplicationController
 		sandwich = Sandwich.find(params[:id])
 		ingredients = sandwich.ingredients
 		render json: sandwich, include: [:ingredients]
+		# Same as:
+		# render json: sandwich.to_json(include: [:ingredients])
 	end
 	def update
 		sandwich = Sandwich.find(params[:id])
@@ -28,14 +30,16 @@ class SandwichesController < ApplicationController
 		ingredient = Ingredient.find_by(id: params[:ingredient_id])
 		# SandwichIngredient.create(sandwich_id: params[:id], ingredient_id: params[:ingredient_id])
 		sandwich.ingredients.push(ingredient)
-		all_ingredients = sandwich.ingredients
-		cal_total = all_ingredients.reduce(0) do |sum, x|
-			sum + x.calories
-		end
-		# sandwich.total_calories += ingredient.calories
-		sandwich.total_calories = cal_total
-		sandwich.save
-		render json: sandwich
+		sandwich.update_calories
+		# Moved method to Sandwich Class in /app/models/sandwich.rb:
+		# all_ingredients = sandwich.ingredients
+		# cal_total = all_ingredients.reduce(0) do |sum, x|
+		# 	sum + x.calories
+		# end
+		# sandwich.total_calories += ingredient.calories 	# => NB Solution
+		# sandwich.total_calories = cal_total
+		# sandwich.save
+		render json: sandwich, include: [:ingredients]
 	end
 	def remove_ingredient
 		sandwich = Sandwich.find(params[:id])

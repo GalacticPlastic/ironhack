@@ -8,9 +8,9 @@
 	<tr>
 		<td>Ingredients:</td>
 		<td>
-			<ul>
+			<ul id="sammich-ingredients">
 				<% @the_sandwich.ingredients.each do |ingredient| %>
-					<li>Name: <%= ingredient.name %></li>
+					<li><%= ingredient.name %></li>
 				<% end %>
 			</ul>
 		</td>
@@ -21,3 +21,9 @@
 	</tr>
 </tbody>
 </table>
+<br>
+<h3>All Ingredients Available:</h3>
+<% @ingredients.each do |ingredient| %>
+	<button class="add_ingredient" data-ingredient-id="<%= ingredient.id %>" data-sandwich-id="<%= @the_sandwich.id%>"><%= ingredient.name %></button>
+<% end %>
+<p><%= link_to "Back", :back %></p>
