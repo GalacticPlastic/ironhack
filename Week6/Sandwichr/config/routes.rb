@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-	root to: 'sandwich_views#index'
+  devise_for :users
+	root to: 'site#home'
 	resources :sandwiches, only: [:index, :show], controller: "sandwich_views"
 	scope "/api" do
 		resources :ingredients, except: [:new, :edit]
