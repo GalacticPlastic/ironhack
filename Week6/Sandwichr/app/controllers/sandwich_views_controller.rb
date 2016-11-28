@@ -1,4 +1,5 @@
 class SandwichViewsController < ApplicationController
+	before_action :authenticate_user!
 	def index
 		@sandwiches = Sandwich.order(created_at: :desc)
 		render :index

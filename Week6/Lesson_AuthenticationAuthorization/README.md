@@ -298,3 +298,25 @@ class User < ApplicationRecord
   validates :email, presence: true
 end
 ```
+
+#### Restrict Access to Pages
+In **/app/controllers/application_controller.rb** :
+```
+	class ApplicationController < ActionController::Base
+		protect_from_forgery with: :exception
+		before_action :restrict, if: :devise_controller?
+		def restrict
+		  	devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+		end
+	end
+```
+
+In appropriate **/app/controllers/nameof_controller.rb**, require user authentication:
+```
+	class NameOfController < ApplicationController
+		before_action :authenticate_user!
+		def index
+			render :index
+		end
+	end
+```
