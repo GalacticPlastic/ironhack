@@ -1,0 +1,132 @@
+
+
+Started GET "/" for ::1 at 2016-04-27 10:57:02 -0400
+Processing by TournamentsController#index as HTML
+  Rendered tournaments/index.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 982ms (Views: 981.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.self-f483ac3b88e1e3370077b698c09eeccfa05db3d0e26a303a9067085517dd829c.css?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/tournaments.self-6d2bc1e9c564bdadff8dd9ed601cd16cfebad46dc4033dfdd3055345a9cddc26.css?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/jquery_readyselector.self-e8333e4cf02799551960a3d4743eee34a3486889bfb9339716ea7deafb7b5224.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/build-error-html.self-5fe653b6c12fee9832fa0fde9c3a201b39d4d2e094ffa0494e4545c21260ac84.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/tournament-new.self-2c228e2bdf8deb82248a753ebacc70a5d3d96d93e3c6ce75639cf3e4387f9bfd.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/build-tourney-html.self-ad498f66a5be7bd61752052559cec3db8f612030f0769e16a0b2e8da7a5752fd.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/build-tourney-list-html.self-b543f1c45e64cf6131722a6793a5c941c6738105abbc7cd54724623b02630080.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/tournaments-index.self-ae549ecf426b408499148430bdede6fc35266bac623ed81d5d000e12363a181a.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/assets/tournaments.self-d8ac4eba90c65f43025ec5fba60840863af26310beecab62c6e2983dc07953f9.js?body=1" for ::1 at 2016-04-27 10:57:04 -0400
+
+
+Started GET "/api/tournaments.json" for ::1 at 2016-04-27 10:57:04 -0400
+
+ActionController::RoutingError (No route matches [GET] "/api/tournaments.json"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/josh/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/josh/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/josh/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/josh/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/josh/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (31.5ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2016-04-27 10:57:08 -0400
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTournaments (20161128135102)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "tournaments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161128135102"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreatePlayers (20161128135108)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161128135108"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateRegistrations (20161128135403)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "registrations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tournament_id" integer, "player_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_registrations_on_tournament_id" ON "registrations" ("tournament_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_registrations_on_tournament_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_registrations_on_tournament_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_registrations_on_player_id" ON "registrations" ("player_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161128135403"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_registrations_on_player_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_registrations_on_player_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_registrations_on_tournament_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_registrations_on_tournament_id' AND type='index'
+

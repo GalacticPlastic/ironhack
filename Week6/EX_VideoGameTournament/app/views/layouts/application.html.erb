@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VideoGames</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <main class="container ctrl-<%= controller_name %> actn-<%= action_name %>">
+    <%= yield %>
+  </main>
+
+  <%= javascript_include_tag 'application' %>
+</body>
+</html>

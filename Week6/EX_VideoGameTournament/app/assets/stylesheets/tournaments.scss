@@ -1,0 +1,19 @@
+// Place all the styles related to the tournaments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.heading-button {
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.tourney-form {
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.tourney-list li {
+  font-size: 22px;
+}
