@@ -21,4 +21,4 @@ Quick Links to Programming Notes
 ### AJAX, JSON and APIs
 1. Intro to AJAX - [`View ReadMe`](Week5/Day22/Lesson_Ajax/README.md).
 2. Defining a REST API - [`View ReadMe`](Week6/Sandwichr/README.md).
-3. Authentication and Authorization - [`View ReadMe`](Week6/README.md).
+3. Authentication and Authorization - [`View ReadMe`](Week6/Lesson_AuthenticationAuthorization/README.md).

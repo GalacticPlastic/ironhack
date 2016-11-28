@@ -1,28 +1,22 @@
 Intro to Rails
 -----------------
-
  1. Create a New Rails Application.
 
-  	```
-  	$ rails new Folder_Name
-  	```
+  	```$ rails new Folder_Name```
 
  2. Create a New Database.
+	(Skip this step if in development using sqllite.)
 
-   	```
-  	$ rails db:create
-  	```
+   	```$ rails db:create```
 
   	If you screw up, nuke the DB and start over:
-  	- db:drop
-  	- db:create
-  	- db:migrate
-  	- db:seed (if you have seeds)
+  	```$ rails db:drop db:create db:migrate```
+
+  	If you have seeds:
+  	``$ rails db:seed```
 
  3. ActiveRecord Shortcut for Steps 4-7:
-	 ```ruby
-	rails g resource ModelName attribute_name:string attribute_number:integer
-	```
+	 ```$ rails g resource ModelName attribute_name:string attribute_number:integer```
 	
 	- Generates the **Model**.
 	- Creates the **Migration** to Create the Table in the Database.
@@ -50,9 +44,7 @@ Intro to Rails
 	### URL Parameters
 	Type the following into the terminal to view all helper paths:
 	
-	```
-	$ rails routes
-	```
+	```$ rails routes```
 
 	Helper Paths can be created automatically using Rails naming conventions by replacing the individual routes for each Controller (Object Class) in the **/config/routes.rb** file like so:
 
@@ -72,9 +64,7 @@ Intro to Rails
 	**IMPORTANT!** Controller naming convention is **PLURAL**!
 	**IMPORTANT!** Model naming convention is **SINGULAR**!
 
-	```
-	$ rails generate controller site
-	```
+	```$ rails generate controller site```
 
 	Created two Ruby classes in **/app/controllers/** :
 	- application_controller.rb
@@ -90,18 +80,14 @@ Intro to Rails
 
 	In the terminal, add generate the model the way you generated the controller. You can add the attributes in as well:
 
-	```
-	rails g model Artist name:string venue:string city:string date:datetime price:integer description:text 
-	```
+	```$ rails g model Artist name:string venue:string city:string date:datetime price:integer description:text```
 
 	*Em:* Don't add **id:integer**, as it is automatically created.
 
 	Now, to generate the schema and get this show on the road, you must update the database with all this new crap.
 	Type the following in the terminal:
 
-	```
-	rails db:migrate
-	```
+	```$ rails db:migrate```
 
 	If you get an error because something was invalid in the model you generated (like if you added *id:integer* like I did), go to **/db/migrate/** and open the *#######_create_modelname.rb* in there.
 
@@ -122,6 +108,11 @@ Intro to Rails
 	  end
 	end
 	```
+
+	To add new or missing colums to an existing table, you must run a _new_ migration, by typing the following into the terminal:
+
+	```$ rails g migration migration_revision_name addition_name:string addition_two:string```
+	```$ rails db:migrate```
 
 	Remove whatever crap you put in there that is preventing you from completing the migrate, save the file, and then type **rails db:migrate** in the terminal again. Voila!
 
@@ -150,16 +141,10 @@ Intro to Rails
 	- Partial HTML snippet file names should begin with an underscore.
 
 	Asset Tag Helpers are GREAT!...
-
-	```
-	<%= image_tag "kaiser_smile.gif", alt:"german shepherd smiling", title:"What a Cute Puppy!" %>
-	````
+	```<%= image_tag "kaiser_smile.gif", alt:"german shepherd smiling", title:"What a Cute Puppy!" %>```
 
 	In place of:
-
-	```
-	<img src="assets/images/kaiser_smile.gif" alt="german shepherd smiling" title="What a Cute Puppy!">
-	```
+	```<img src="assets/images/kaiser_smile.gif" alt="german shepherd smiling" title="What a Cute Puppy!">```
 
 	...Except for the Auto-Generated Fingerprint Caching URL Bull@#$%.
 
@@ -215,13 +200,9 @@ CRUD stands for:
 Many-to-Many associations need an additional model to work. In the industry it's known as a _join table_ (aka, the _middle man_). In the `Post` and `Tag` example, it is named `PostTag`.
 
 Commands used to generate the models:
-
-```bash
-$ rails generate model Post    title:string    text:text       user:belongs_to
-$ rails generate model Tag     name:string
-
-$ rails generate model PostTag post:belongs_to tag:belongs_to
-```
+	```$ rails generate model Post    title:string    text:text       user:belongs_to```
+	```$ rails generate model Tag     name:string```
+	```$ rails generate model PostTag post:belongs_to tag:belongs_to```
 
 See the final schema in the [`db/schema.rb`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week6/day1/many_to_many_blog/db/schema.rb).
 
@@ -280,12 +261,18 @@ If you are using
 [template strings](https://ponyfoo.com/articles/es6-template-strings-in-depth),
 you will get an error when you try to deploy your app to Heroku. To avoid that error, use the `sprockets-es6` gem.
 
+```gem "sprockets-es6", require: "sprockets/es6"```
+
 1. Add the `sprockets-es6` gem to your [`Gemfile`](Gemfile#L3)
    with the [special `require` option](Gemfile#L3).
 2. Change the extension of any JavaScript files
-   that use classes or template strings from `.js` to `.es6`.
-   [See our `blah.es6` file](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/blah.es6)
-   for an example.
+   that use classes or template strings from `.js` to `.es6`:
+
+   ```
+	   $(document).on("turbolinks:load", function () {
+		  console.log("the page has loaded from blah.es6");
+		});
+	```
 3. You **should never**
    change the extensions of Rails' special JavaScript files:
    [`application.js`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/application.js) and
@@ -296,6 +283,10 @@ you will get an error when you try to deploy your app to Heroku. To avoid that e
 Rails comes with a gem named
 [Turbolinks](http://guides.rubyonrails.org/working_with_javascript_in_rails.html#turbolinks)
 that does some funky stuff with JavaScript to make your pages load faster. Because of that, you can't depend on the `$(document).ready()` callback. Turbolinks provides a special event (`turbolinks:load`)
-that you should use instead.
+that you should use instead:
 
-[See the Ironhack `pizza.js` file](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/pizza.js#L9) for an example.
+```
+$(document).on("turbolinks:load", function () {
+  console.log("the page has loaded from pizza.js");
+});
+```
