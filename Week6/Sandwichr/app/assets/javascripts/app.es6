@@ -18,17 +18,17 @@ function fetchIngredient (clickButton) {
 };
 function addIngredient (response) {
 	console.log(response);
-	ing_array = response.ingredients;
-
-	console.log('Burnt potato. :(');
+	var ing_array = response.ingredients;
 	console.log(ing_array);
-	// show_ing = ing_array.slice(-1)[0];
-
-	// Or...
-	// show_ing = ing_array.lastIndexOf();
-	// console.log(show_ing);
-	
-	// $('#sammich-ingredients').append(show_ing);
+	var show_ing = ing_array.slice(-1)[0];
+	console.log("Show_Ing Variable");
+	console.log(show_ing);
+	var ing_name = show_ing.name;
+	console.log(ing_name);
+	$('#sammich-ingredients').append(`<li>${ing_name}</li>`);
+	var current_cal = $('.js-total-calories').text();
+	var new_cal = parseInt(current_cal) + show_ing.calories;
+	$('.js-total-calories').text(new_cal);
 };
 function errorIngredient (error) {
 	console.log('You fail at life, brah.');
