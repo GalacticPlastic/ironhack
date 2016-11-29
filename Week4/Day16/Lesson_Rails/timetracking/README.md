@@ -148,7 +148,8 @@ Intro to Rails
 
 	...Except for the Auto-Generated Fingerprint Caching URL Bull@#$%.
 
-# Params
+[Params](#rails-params)
+====================================================================
 ### Through a Route
 Parameters are hashes used to date from the client's browser to the application server. Params through a route example:
 ```ruby
@@ -176,7 +177,9 @@ get '/user/:name' do
 	"Hello, #{name}!"
 end
 ```
-#Faith of the 7 CRUD Actions
+
+[Faith of the 7 CRUD Actions](#crud-actions)
+====================================================================
 CRUD stands for:
 - Create
 - Read
@@ -195,7 +198,8 @@ CRUD stands for:
 
 **Show**, **Edit**, and **Delete** require the **ID** to function.
 
-# Many To Many Associations
+[Many To Many Associations](#many-to-many)
+====================================================================
 
 Many-to-Many associations need an additional model to work. In the industry it's known as a _join table_ (aka, the _middle man_). In the `Post` and `Tag` example, it is named `PostTag`.
 
@@ -237,8 +241,8 @@ class Sandwich < ApplicationRecord
 end
 ```
 
-Using JS in Rails
-=================
+[Using JS in Rails](#using-js-in-rails)
+====================================================================
 
 There are few gotchas when using JavaScript in a Rails application.
 
@@ -261,18 +265,14 @@ If you are using
 [template strings](https://ponyfoo.com/articles/es6-template-strings-in-depth),
 you will get an error when you try to deploy your app to Heroku. To avoid that error, use the `sprockets-es6` gem.
 
-```gem "sprockets-es6", require: "sprockets/es6"```
 
 1. Add the `sprockets-es6` gem to your [`Gemfile`](Gemfile#L3)
    with the [special `require` option](Gemfile#L3).
-2. Change the extension of any JavaScript files
-   that use classes or template strings from `.js` to `.es6`:
+   ```gem "sprockets-es6", require: "sprockets/es6"```
 
-   ```
-	   $(document).on("turbolinks:load", function () {
-		  console.log("the page has loaded from blah.es6");
-		});
-	```
+2. Change the extension of any JavaScript files
+   that use classes or template strings from `.js` to `.es6`.
+
 3. You **should never**
    change the extensions of Rails' special JavaScript files:
    [`application.js`](https://github.com/ironhack-miami-oct-2016/course-examples/blob/master/week5/day4/js_in_rails/app/assets/javascripts/application.js) and
@@ -286,7 +286,7 @@ that does some funky stuff with JavaScript to make your pages load faster. Becau
 that you should use instead:
 
 ```
-$(document).on("turbolinks:load", function () {
-  console.log("the page has loaded from pizza.js");
-});
+	$(document).on("turbolinks:load", function () {
+	  console.log("the page has loaded from pizza.js");
+	});
 ```
