@@ -30,4 +30,3 @@ function handleError (errorTrack) {
 	console.log("You fail at life, brah.");
 	console.log(errorTrack.responseText);
 };
-
