@@ -56,8 +56,8 @@ function fetchArtist () {
 function songArtist (response) {
 	console.log('Po-po-potato!');
 	console.log(response);
-	var artistImage = response.images[0].url;		// Array, dammit
-	var artistGenres = response.genres.join(", ");	// Array, dammit
+	var artistImage = response.images[0].url;
+	var artistGenres = response.genres.join(", ");
 	$('#artist-modal').modal('show');
 	$('.js-modal-artist').text(response.name);
 	$('.js-photo').attr("src", `${artistImage}`);
