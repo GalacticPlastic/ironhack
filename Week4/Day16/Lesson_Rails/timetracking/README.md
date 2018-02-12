@@ -64,7 +64,7 @@ Intro to Rails
 	**IMPORTANT!** Controller naming convention is **PLURAL**!
 	**IMPORTANT!** Model naming convention is **SINGULAR**!
 
-	```$ rails generate controller site```
+	```$ rails generate controller sites```
 
 	Created two Ruby classes in **/app/controllers/** :
 	- application_controller.rb
