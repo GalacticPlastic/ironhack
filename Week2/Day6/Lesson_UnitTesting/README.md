@@ -23,8 +23,7 @@ input = number_string.split(',')
 
 * Must convert array elements into Integers!
   
-  - `.to_i`  ??
-  - `.to_i` method of strings, can be applied to each array element within sum loop
+  - `.to_i` method of strings, can be applied to each array element within sum loop.
   - `.to_i` cannot be applied directly to an array:
   - `input.to_s` # => NO!
 
